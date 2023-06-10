@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Luggage Cargo</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <header>
+      <img src="addis-cargo-HD.png" alt="Addis Cargo Logo" class="logo" />
+      <h1>Welcome to Addis-Cargo</h1>
+      <p>Your trusted shipping service for the Ethiopian diaspora</p>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#shipment-request">Shipment Request</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about">About Us</a></li>
+      </ul>
+    </nav>
+
+    <div class="container">
+      <section id="how-it-works">
+        <h2>How It Works</h2>
+        <ul>
+          <li>Contact us to schedule a pickup for your shipment.</li>
+          <li>
+            Our professional team will collect your items from your desired
+            location.
+          </li>
+          <li>
+            Your shipment will be transported to our drop-off locations in Addis
+            Ababa.
+          </li>
+          <li>
+            Our colleagues will receive and securely store your items until
+            they're ready for transit.
+          </li>
+          <li>
+            Once your shipment arrives, you can pick it up or arrange for
+            delivery to your address.
+          </li>
+        </ul>
+        <p>
+          For more information or to schedule a shipment,
+          <a href="#contact">contact us</a> and we'll assist you every step of
+          the way.
+        </p>
+      </section>
+      <section id="pricing">
+        <h2>Pricing</h2>
+        <table class="pricing-table">
+          <tr>
+            <th>Item Category</th>
+            <th>Price</th>
+          </tr>
+          <tr>
+            <td>Medicine</td>
+            <td>$15</td>
+          </tr>
+          <tr>
+            <td>Clothing</td>
+            <td>$10</td>
+          </tr>
+          <tr>
+            <td>Electronics</td>
+            <td>$50</td>
+          </tr>
+          <tr>
+            <td>Books</td>
+            <td>$10</td>
+          </tr>
+          <tr>
+            <td>Baby Products</td>
+            <td>$10</td>
+          </tr>
+          <tr>
+            <td>Shoes</td>
+            <td>$15</td>
+          </tr>
+          <tr>
+            <td>Cosmetics</td>
+            <td>$15</td>
+          </tr>
+          <tr>
+            <td>Jewelry</td>
+            <td>$30</td>
+          </tr>
+          <tr>
+            <td>Personal care products</td>
+            <td>$15</td>
+          </tr>
+        </table>
+      </section>
+
+      <section id="shipment-request">
+        <h2>Shipment Request</h2>
+        <form>
+          <label for="item-type">Item Type:</label>
+          <select id="item-type">
+            <option value="medicine">Medicine - $15</option>
+            <option value="clothing">Clothing - $10</option>
+            <option value="electronics">Electronics - $50</option>
+            <option value="books">Books - $10</option>
+            <option value="baby-products">Baby Products - $10</option>
+            <option value="shoes">Shoes - $15</option>
+            <option value="cosmetics">Cosmetics - $15</option>
+            <option value="jewelry">Jewelry - $30</option>
+            <option value="personal-care">Personal care products - $15</option>
+          </select>
+
+          <label for="origin">Origin:</label>
+          <select id="origin">
+            <option value="dc">Washington, D.C.</option>
+            <option value="maryland">Maryland</option>
+            <option value="virginia">Virginia</option>
+          </select>
+
+          <label for="delivery-option">Delivery Option:</label>
+          <select id="delivery-option">
+            <option value="standard">Standard</option>
+            <option value="express">
+              Express - 1.5 times the shipping Price
+            </option>
+            <option value="expedited">
+              Expedited - 2 times the shipping Price
+            </option>
+          </select>
+
+          <button type="button" onclick="calculatePrice()">
+            Calculate Price
+          </button>
+          <div id="price-result"></div>
+          <button
+            id="ship-now-button"
+            onclick="openEmailClient()"
+            style="display: none"
+          >
+            Ship Now
+          </button>
+        </form>
+      </section>
+
+      <section id="contact">
+        <h2>Contact Information</h2>
+        <p>For any inquiries or concerns, please reach out to us:</p>
+        <div class="contact-details">
+          <p>
+            <strong>Email:</strong>
+            <a href="mailto:beka10f@yahoo.com">beka10f@yahoo.com</a>
+          </p>
+          <p>
+            <strong>Phone:</strong>
+            <a href="tel:+12027631879">+1 202-763-1879</a>
+          </p>
+        </div>
+
+        <form action="#" method="post" onsubmit="sendEmail(event)">
+          <label for="name">Your Name:</label>
+          <input type="text" id="name" name="name" required />
+          <label for="email">Your Email:</label>
+          <input type="email" id="email" name="email" required />
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </section>
+
+      <section id="about">
+        <h2>About Us</h2>
+        <p>
+          Addis-Cargo is a logistics startup dedicated to serving the Ethiopian
+          diaspora. We understand the importance of affordable shipping,
+          reliable delivery, and convenience for our customers. With our
+          expertise in the logistics industry, we aim to provide exceptional
+          service and bridge the gap for the Ethiopian community.
+        </p>
+        <p>
+          Our team is committed to ensuring your shipments are handled securely
+          and delivered on time. We take pride in being a trusted partner for
+          your shipping needs.
+        </p>
+      </section>
+
+      <section id="testimonials">
+        <h2>Testimonials</h2>
+        <div class="testimonial">
+          <h3>Sami Tesfaye</h3>
+          <p>
+            "Addis-Cargo provided excellent service for shipping my packages. I
+            received them on time and in perfect condition. Highly recommended!"
+          </p>
+        </div>
+        <div class="testimonial">
+          <h3>Meskerem Tadesse</h3>
+          <p>
+            "አዲስ-ካርጎ ወደ ቤተሰቤ መድኃኒት እንድልክ ፈቀደልኝ። መጥተው ፓኬጁን አነሱ እና ከሳምንት በፊት አሰላምታ
+            ሆኖ በብዛት ታስቸግራለህ።"
+          </p>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      <p>
+        &copy; 2023 Addis-Cargo. All rights reserved. | Designed by Your Name
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
