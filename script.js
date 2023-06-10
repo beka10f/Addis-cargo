@@ -96,7 +96,6 @@ function openEmailClient() {
   callButton.addEventListener("click", function () {
     // Replace the phone number with the appropriate phone number
     window.location.href = "tel:+12027631879";
-    closeModal();
   });
 
   const emailButton = document.createElement("button");
@@ -106,7 +105,6 @@ function openEmailClient() {
       subject
     )}&body=${encodeURIComponent(body)}`;
     window.location.href = mailtoLink;
-    closeModal();
   });
 
   modalContent.appendChild(closeButton);
@@ -121,9 +119,3 @@ function openEmailClient() {
     document.body.removeChild(modal);
   }
 }
-var menu = document.getElementById("menu");
-var toggleBtn = document.getElementById("toggle-btn");
-
-toggleBtn.addEventListener("click", function () {
-  menu.classList.toggle("show");
-});
