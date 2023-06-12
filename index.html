@@ -97,51 +97,68 @@
       </section>
 
       <section id="shipment-request">
-        <h2>Shipment Request</h2>
-        <form>
-          <label for="item-type">Item Type:</label>
-          <select id="item-type">
-            <option value="medicine">Medicine - $15</option>
-            <option value="clothing">Clothing - $10</option>
-            <option value="electronics">Electronics - $50</option>
-            <option value="books">Books - $10</option>
-            <option value="baby-products">Baby Products - $10</option>
-            <option value="shoes">Shoes - $15</option>
-            <option value="cosmetics">Cosmetics - $15</option>
-            <option value="jewelry">Jewelry - $30</option>
-            <option value="personal-care">Personal care products - $15</option>
-          </select>
-
-          <label for="origin">Origin:</label>
-          <select id="origin">
-            <option value="dc">Washington, D.C.</option>
-            <option value="maryland">Maryland</option>
-            <option value="virginia">Virginia</option>
-          </select>
-
-          <label for="delivery-option">Delivery Option:</label>
-          <select id="delivery-option">
-            <option value="standard">Standard</option>
-            <option value="express">
-              Express - 1.5 times the shipping Price
-            </option>
-            <option value="expedited">
-              Expedited - 2 times the shipping Price
-            </option>
-          </select>
-
-         <button type="button" onclick="calculatePrice()">
-            <a href="#price-estimate" class="price-button">Calculate Price</a>
-          </button>
-          <div id="price-result"></div>
-          <button
-            id="ship-now-button"
-            onclick="openEmailClient()"
-            style="display: none"
-          >
-            Ship Now
-          </button>
-        </form>
+        <div class="form-container">
+          <h2>Shipment Request</h2>
+          <form id="shipment-form">
+            <div class="form-row">
+              <label for="item-type">Item Type:</label>
+              <select id="item-type">
+                <option value="medicine">Medicine - $15</option>
+                <option value="clothing">Clothing - $10</option>
+                <option value="electronics">Electronics - $50</option>
+                <option value="books">Books - $10</option>
+                <option value="baby-products">Baby Products - $10</option>
+                <option value="shoes">Shoes - $15</option>
+                <option value="cosmetics">Cosmetics - $15</option>
+                <option value="jewelry">Jewelry - $30</option>
+                <option value="personal-care">
+                  Personal care products - $15
+                </option>
+              </select>
+            </div>
+            <div class="form-row">
+              <label for="origin">Origin:</label>
+              <select id="origin">
+                <option value="dc">Washington, D.C.</option>
+                <option value="maryland">Maryland</option>
+                <option value="virginia">Virginia</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <label for="delivery-option">Delivery Option:</label>
+              <select id="delivery-option">
+                <option value="standard">Standard - 7 to 12 days</option>
+                <option value="express">Express - 5 to 7 days</option>
+                <option value="expedited">Expedited - 2 to 5 days</option>
+              </select>
+            </div>
+            <button type="button" onclick="calculatePrice()">
+              Calculate Price
+            </button>
+          </form>
+        </div>
+        <div class="receipt-container">
+          <div id="price-result">
+            <h3>Receipt</h3>
+            <div class="receipt-row">
+              <span class="receipt-label">Item Price:</span>
+              <span id="item-price">$0</span>
+            </div>
+            <div class="receipt-row">
+              <span class="receipt-label">Shipping Price:</span>
+              <span id="shipping-price">$0</span>
+            </div>
+            <div class="receipt-row total-row">
+              <span class="receipt-label">Total:</span>
+              <span id="total-price">$0</span>
+            </div>
+            <div class="receipt-row">
+              <button id="contact-button" onclick="openEmailClient()">
+                Ship Now
+              </button>
+            </div>
+          </div>
+        </div>
       </section>
 
       <section id="contact">
