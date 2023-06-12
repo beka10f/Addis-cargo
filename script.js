@@ -26,6 +26,8 @@ function sendEmail(event) {
   alert("Thank you for your message. We will get back to you soon.");
 }
 
+// Function to calculate the price and estimated delivery time
+// Function to calculate the price and estimated delivery time
 function calculatePrice() {
   const itemTypes = {
     medicine: 15,
@@ -45,25 +47,34 @@ function calculatePrice() {
     expedited: "2 to 5 days",
   };
 
+  // Get selected options from the form
   const itemType = document.getElementById("item-type").value;
   const origin = document.getElementById("origin").value;
   const deliveryOption = document.getElementById("delivery-option").value;
 
   // Perform calculations based on the selected options
-  let price = itemTypes[itemType] || 0;
-  let deliveryTime = deliveryTimes[deliveryOption] || "";
+  const itemPrice = itemTypes[itemType] || 0;
+  let shippingPrice = 0;
+  let totalPrice = itemPrice;
 
   if (deliveryOption === "express") {
-    price *= 1.5;
+    shippingPrice = 10;
   } else if (deliveryOption === "expedited") {
-    price *= 2;
+    shippingPrice = 20;
   }
 
-  // Display the result
-  const priceResult = document.getElementById("price-result");
-  priceResult.innerHTML = `Estimated Price: $${price}<br>Estimated Delivery Time: ${deliveryTime}`;
+  totalPrice += shippingPrice;
 
-  // Show ship now button
+  // Update the price in the receipt section
+  const itemPriceElement = document.getElementById("item-price");
+  const shippingPriceElement = document.getElementById("shipping-price");
+  const totalPriceElement = document.getElementById("total-price");
+
+  itemPriceElement.textContent = `$${itemPrice.toFixed(2)}`;
+  shippingPriceElement.textContent = `$${shippingPrice.toFixed(2)}`;
+  totalPriceElement.textContent = `$${totalPrice.toFixed(2)}`;
+
+  // Show "Ship Now" button
   const shipNowButton = document.getElementById("ship-now-button");
   shipNowButton.style.display = "block";
 }
