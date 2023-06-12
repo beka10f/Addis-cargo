@@ -79,12 +79,21 @@ function calculatePrice() {
   shipNowButton.style.display = "block";
 }
 
+// Function to open email client
 function openEmailClient() {
-  const priceResult = document.getElementById("price-result").textContent;
+  // Get the selected options from the form
+  const itemType = document.getElementById("item-type").value;
+  const deliveryOption = document.getElementById("delivery-option").value;
+
+  // Get the price result from the page
+  const itemPrice = document.getElementById("item-price").textContent;
+  const shippingPrice = document.getElementById("shipping-price").textContent;
+  const totalPrice = document.getElementById("total-price").textContent;
   const email = "beka10f@yahoo.com";
   const subject = "Shipment Estimate";
-  const body = `Hello,\n\nI would like to discuss a shipment with the following estimated price:\n\n${priceResult}\n\nLooking forward to your response.\n\nBest regards,`;
+  const body = `Hello,\n\nI would like to discuss a shipment with the following details:\n\nItem: ${itemType}\nDelivery Type: ${deliveryOption}\n\nEstimated Prices:\n\nItem Price: ${itemPrice}\nShipping Price: ${shippingPrice}\nTotal Price: ${totalPrice}\n\nLooking forward to your response.\n\nBest regards,`;
 
+  // Create a modal for contact options
   const modal = document.createElement("div");
   modal.classList.add("modal");
 
