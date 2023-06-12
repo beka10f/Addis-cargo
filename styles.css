@@ -4,7 +4,6 @@
   margin-bottom: 10px;
   margin-top: 5px;
 }
-
 /* General Styles */
 body {
   font-family: Arial, sans-serif;
@@ -326,9 +325,11 @@ footer p {
 #shipment-request button:hover {
   background-color: #0056b3;
 }
+
 #shipment-request a {
   color: #fff;
 }
+
 /* Modal */
 .modal {
   position: fixed;
