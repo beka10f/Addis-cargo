@@ -1,9 +1,3 @@
-.logo {
-  width: 200px;
-  height: auto;
-  margin-bottom: 10px;
-  margin-top: 5px;
-}
 /* General Styles */
 body {
   font-family: Arial, sans-serif;
@@ -161,30 +155,90 @@ section#testimonials .testimonial h3 {
 }
 
 /* Pricing */
-section#pricing {
-  text-align: center;
+#weight-info {
+  padding: 10px;
+  background-color: #fff; /* White background for a clean look */
+  border-left: 3px solid #3f51b5; /* A left border for a modern design touch */
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #333;
+  font-family: "Helvetica", "Arial", sans-serif; /* A clean, sans-serif font */
+}
+
+#weight-info span {
+  font-weight: bold;
+  color: #3f51b5; /* Match the color of the border */
 }
 
 .pricing-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-}
-
-.pricing-table th,
-.pricing-table td {
-  padding: 10px;
   text-align: center;
 }
 
-.pricing-table th {
-  background-color: #007bff;
-  color: #fff;
+table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+  border: none;
 }
 
-.pricing-table td {
-  background-color: #f5f5f5;
-  color: #333;
+th,
+td {
+  padding: 15px;
+  font-weight: normal;
+}
+
+th {
+  background-color: transparent;
+  color: #777;
+  font-size: 16px;
+  border-bottom: none;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.weight-range-lb {
+  display: none;
+}
+
+.price-lb {
+  display: none;
+}
+
+#unit-clicker {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#unit-clicker button {
+  border: none;
+  background-color: transparent;
+  color: #777;
+  cursor: pointer;
+  font-size: 14px;
+  margin-right: 10px;
+  padding: 5px 10px;
+  transition: all 0.3s ease-in-out;
+  outline: none;
+  border-radius: 30px;
+}
+
+#unit-clicker button.active {
+  color: #fff;
+  background-color: #000;
+  font-weight: bold;
+}
+
+#unit-clicker button:focus {
+  outline: none;
+}
+
+#unit-clicker button:hover {
+  color: #fff;
+  background-color: #000;
 }
 
 /* Contact */
@@ -283,21 +337,21 @@ footer p {
 }
 
 /* Shipment Request */
+/* Shipment Request */
 #shipment-request {
+  display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-  align-items: flex-start;
 }
 
 .form-container {
-  flex-basis: 60%;
-  max-width: 600px;
-  margin-right: 20px;
-  margin-bottom: 8px;
-  padding: 40px;
-  background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  text-align: center;
+  flex-basis: 100%;
+  max-width: 100%;
+  margin-bottom: 20px;
+  padding: 30px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .form-container h2 {
@@ -306,31 +360,41 @@ footer p {
   color: #333333;
 }
 
-#shipment-form .form-row {
+.form-container .input-container {
   margin-bottom: 20px;
-  text-align: left;
 }
 
-#shipment-form label {
+.form-container label {
   display: block;
   margin-bottom: 10px;
   font-weight: bold;
   color: #555555;
 }
 
-#shipment-form select {
+.form-container input[type="number"],
+.form-container select,
+.form-container input[type="text"] {
   width: 100%;
   padding: 10px;
-  border-radius: 4px;
-  border: 1px solid #cccccc;
+  border-radius: 5px;
+  border: 1px solid #ccc;
   font-size: 14px;
   color: #555555;
+  background-color: #fff;
+  transition: border-color 0.3s;
 }
 
-#shipment-form button {
+.form-container input[type="number"]:focus,
+.form-container select:focus,
+.form-container input[type="text"]:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.form-container button {
   padding: 12px 24px;
-  margin-top: 10px;
-  border-radius: 4px;
+  margin-top: 20px;
+  border-radius: 5px;
   background-color: #007bff;
   color: #ffffff;
   border: none;
@@ -339,18 +403,17 @@ footer p {
   transition: background-color 0.3s;
 }
 
-#shipment-form button:hover {
+.form-container button:hover {
   background-color: #0056b3;
 }
 
 .receipt-container {
-  flex-basis: 40%;
-  max-width: 600px;
-  margin-right: 20px;
-  padding: 40px;
-  background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  flex-basis: 100%;
+  max-width: 100%;
+  padding: 30px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .receipt-container h3 {
@@ -362,6 +425,7 @@ footer p {
 .receipt-row {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: 10px;
 }
 
@@ -372,13 +436,24 @@ footer p {
 
 .total-row {
   margin-top: 20px;
-  border-top: 1px solid #cccccc;
+  border-top: 1px solid #ccc;
   padding-top: 10px;
 }
 
-#contact-button {
+#product-description {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  color: #555555;
+  background-color: #fff;
+  transition: border-color 0.3s;
+}
+
+#ship-now-button {
   padding: 12px 24px;
-  border-radius: 4px;
+  border-radius: 5px;
   background-color: #007bff;
   color: #ffffff;
   border: none;
@@ -387,44 +462,46 @@ footer p {
   transition: background-color 0.3s;
 }
 
-#contact-button:hover {
+#ship-now-button:hover {
   background-color: #0056b3;
 }
 
 /* Modal */
 .modal {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  display: flex;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 500px;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  display: none;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  z-index: 9999;
 }
 
 .modal-content {
-  background-color: #fff;
-  padding: 20px;
+  width: 100%;
   text-align: center;
-  border-radius: 8px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-  max-width: 400px;
-  margin: 0 auto;
+  font-size: 18px;
+  line-height: 1.6;
 }
 
 .close-button {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 20px;
+  right: 20px;
   background: none;
   border: none;
-  cursor: pointer;
-  font-size: 24px;
+  font-size: 30px;
   color: #555;
-  transition: color 0.3s;
+  cursor: pointer;
+  transition: color 0.2s;
 }
 
 .close-button:hover {
@@ -432,33 +509,67 @@ footer p {
 }
 
 .modal h3 {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   color: #333;
+  font-size: 24px;
+  font-weight: 600;
 }
 
 .modal p {
-  margin-bottom: 20px;
   color: #555;
+  margin-bottom: 25px;
+  font-size: 16px;
 }
 
 .modal button {
-  margin: 10px;
-  padding: 8px 16px;
-  border-radius: 4px;
-  background-color: #007bff;
+  padding: 10px 20px;
+  font-size: 18px;
   color: #fff;
+  background-color: #007bff;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s;
+  transition: background-color 0.2s;
 }
 
 .modal button:hover {
   background-color: #0056b3;
 }
+/* Input and Select styles */
+.modal input[type="text"],
+.modal select {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  transition: border 0.3s;
+}
 
+.modal input[type="text"]:focus,
+.modal select:focus {
+  border: 2px solid #007bff;
+}
 #shipment-request button {
-  /* Existing styles */
+  padding: 12px 24px;
+  margin-top: 20px;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
   margin: 5px auto;
   display: block;
+}
+
+.logo {
+  width: 200px;
+  height: auto;
+  margin-bottom: 10px;
+  margin-top: 5px;
 }
