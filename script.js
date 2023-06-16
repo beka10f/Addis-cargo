@@ -177,3 +177,4 @@ function submitShipNow() {
     window.location.href = mailtoLink;
   }
 }
+
