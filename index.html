@@ -3,7 +3,7 @@
   <head>
     <title>Addis-cargo</title>
     <link rel="stylesheet" type="text/css" href="styles.css" />
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script> <!-- Added script tag for SMTPJS library -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>
@@ -27,23 +27,12 @@
         <h2>How It Works</h2>
         <ul>
           <li>Contact us to schedule a pickup for your shipment.</li>
-          <li>
-            Our professional team will collect your items from your desired
-            location.
-          </li>
-          <li>
-            Your shipment will be transported to our drop-off locations in Addis
-            Ababa.
-          </li>
-          <li>
-            Our colleagues will receive and securely store your items until
-            they're ready for transit.
-          </li>
-          <li>
-            Once your shipment arrives, you can pick it up or arrange for
-            delivery to your address.
-          </li>
+          <li>Our team will come to your desired location and collect the items.</li>
+          <li>We will transport your shipment to our drop-off locations in Addis Ababa.</li>
+          <li>Our dedicated colleagues will receive your items and securely store them until they are ready for transit.</li>
+          <li>Upon the arrival of your shipment, you have the option to personally pick it up or arrange for delivery to your address.</li>
         </ul>
+        
         <p>
           For more information or to schedule a shipment,
           <a href="#contact">contact us</a> and we'll assist you every step of
@@ -51,114 +40,208 @@
         </p>
       </section>
       <section id="pricing">
-        <h2>Pricing</h2>
-        <table class="pricing-table">
-          <tr>
-            <th>Item Category</th>
-            <th>Price</th>
-          </tr>
-          <tr>
-            <td>Medicine</td>
-            <td>$15</td>
-          </tr>
-          <tr>
-            <td>Clothing</td>
-            <td>$10</td>
-          </tr>
-          <tr>
-            <td>Electronics</td>
-            <td>$50</td>
-          </tr>
-          <tr>
-            <td>Books</td>
-            <td>$10</td>
-          </tr>
-          <tr>
-            <td>Baby Products</td>
-            <td>$10</td>
-          </tr>
-          <tr>
-            <td>Shoes</td>
-            <td>$15</td>
-          </tr>
-          <tr>
-            <td>Cosmetics</td>
-            <td>$15</td>
-          </tr>
-          <tr>
-            <td>Jewelry</td>
-            <td>$30</td>
-          </tr>
-          <tr>
-            <td>Personal care products</td>
-            <td>$15</td>
-          </tr>
-        </table>
+        <div class="pricing-table">
+          <h2>Pricing</h2>
+          <div id="unit-clicker">
+            <button id="kg-button" class="active" onclick="toggleUnit('kg')">
+              Kg
+            </button>
+            <button id="lb-button" onclick="toggleUnit('lb')">Lb</button>
+          </div>
+          <table>
+            <tr>
+              <th>Weight Range</th>
+              <th>Price per Unit</th>
+            </tr>
+            <tr>
+              <td>
+                <span class="weight-range-kg">Below 3 Kg</span>
+                <span class="weight-range-lb" style="display: none"
+                  >Below 6 lb</span
+                >
+              </td>
+              <td>
+                <span class="price-kg">$50</span>
+                <span class="price-lb" style="display: none">$50</span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <span class="weight-range-kg">3-10 Kg</span>
+                <span class="weight-range-lb" style="display: none"
+                  >6-22 lb</span
+                >
+              </td>
+              <td>
+                <span class="price-kg">$18.00</span>
+                <span class="price-lb" style="display: none">$8.16</span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <span class="weight-range-kg">11-50 Kg</span>
+                <span class="weight-range-lb" style="display: none"
+                  >23-110 lb</span
+                >
+              </td>
+              <td>
+                <span class="price-kg">$14.00</span>
+                <span class="price-lb" style="display: none">$6.35</span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <span class="weight-range-kg">51-100 Kg</span>
+                <span class="weight-range-lb" style="display: none"
+                  >111-220 lb</span
+                >
+              </td>
+              <td>
+                <span class="price-kg">$13.00</span>
+                <span class="price-lb" style="display: none">$5.90</span>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <span class="weight-range-kg">101-300 Kg</span>
+                <span class="weight-range-lb" style="display: none"
+                  >221-660 lb</span
+                >
+              </td>
+              <td>
+                <span class="price-kg">$12.00</span>
+                <span class="price-lb" style="display: none">$5.45</span>
+              </td>
+            </tr>
+          </table>
+          <div id="weight-info">
+            Please note, items under <span>6 pounds or 3 kg</span> do not incur a per unit charge.
+          </div>
+        </div>
       </section>
 
       <section id="shipment-request">
         <div class="form-container">
-          <h2>Shipment Request</h2>
-          <form id="shipment-form">
-            <div class="form-row">
-              <label for="item-type">Item Type:</label>
-              <select id="item-type">
-                <option value="medicine">Medicine - $15</option>
-                <option value="clothing">Clothing - $10</option>
-                <option value="electronics">Electronics - $50</option>
-                <option value="books">Books - $10</option>
-                <option value="baby-products">Baby Products - $10</option>
-                <option value="shoes">Shoes - $15</option>
-                <option value="cosmetics">Cosmetics - $15</option>
-                <option value="jewelry">Jewelry - $30</option>
-                <option value="personal-care">
-                  Personal care products - $15
-                </option>
-              </select>
-            </div>
-            <div class="form-row">
-              <label for="origin">Origin:</label>
-              <select id="origin">
-                <option value="dc">Washington, D.C.</option>
-                <option value="maryland">Maryland</option>
-                <option value="virginia">Virginia</option>
-              </select>
-            </div>
-            <div class="form-row">
-              <label for="delivery-option">Delivery Option:</label>
-              <select id="delivery-option">
-                <option value="standard">Standard - 7 to 12 days</option>
-                <option value="express">Express - 5 to 7 days</option>
-                <option value="expedited">Expedited - 2 to 5 days</option>
-              </select>
-            </div>
-            <button type="button" onclick="calculatePrice()">
-              Calculate Price
-            </button>
-          </form>
+          <h2>Shipping Calculator</h2>
+          <div class="input-container">
+            <label for="product-description">Product Description:</label>
+            <input type="text" id="product-description" placeholder="Enter product description" />
+          </div>
+          <div class="input-container">
+            <label for="weight">Weight:</label>
+            <input type="number" id="weight" placeholder="Enter weight" />
+            <select id="unit">
+              <option value="kg">Kg</option>
+              <option value="lb">Lb</option>
+            </select>
+          </div>
+          <div class="input-container">
+            <label for="origin">Origin:</label>
+            <select id="origin">
+              <option value="Washington, D.C.">Washington, D.C</option>
+              <option value="Maryland">Maryland</option>
+              <option value="virginia">Virginia</option>
+            </select>
+          </div>
+          <div class="input-container">
+            <label for="shipping-speed">Shipping Speed:</label>
+            <select id="shipping-speed">
+              <option value="Standard (7 - 12 days)">Standard - 7 to 12 days</option>
+                <option value="Express (5 - 7 days)">$10 (Express - 5 to 7 days)</option>
+                <option value="Expedited (2 - 5 days)">$20 (Expedited - 2 to 5 days)</option>
+            </select>
+          </div>
+          <button onclick="calculatePrice()">Calculate Price</button>
         </div>
+      
         <div class="receipt-container">
-          <div id="price-result">
-            <h3>Receipt</h3>
-            <div class="receipt-row">
-              <span class="receipt-label">Item Price:</span>
-              <span id="item-price">$0</span>
-            </div>
-            <div class="receipt-row">
-              <span class="receipt-label">Shipping Price:</span>
-              <span id="shipping-price">$0</span>
-            </div>
-            <div class="receipt-row total-row">
-              <span class="receipt-label">Total:</span>
-              <span id="total-price">$0</span>
-            </div>
-            <div class="receipt-row">
-              <button id="contact-button" onclick="openEmailClient()">
-                Ship Now
-              </button>
-            </div>
+          <h3>Receipt</h3>
+          <div class="receipt-row">
+            <span class="receipt-label">Product Description:</span>
+            <span id="receipt-product-description"></span>
+          </div>
+          <div class="receipt-row">
+            <span class="receipt-label">Weight:</span>
+            <span id="receipt-weight"></span>
+          </div>
+         
+          <div class="receipt-row">
+            <span class="receipt-label">Origin:</span>
+            <span id="receipt-origin"></span>
+          </div>
+          <div class="receipt-row">
+            <span class="receipt-label">Shipping Speed:</span>
+            <span id="receipt-shipping-speed"></span>
+          </div>
+          <div class="receipt-row">
+            <span class="receipt-label">Price:</span>
+            <span id="receipt-price"></span>
           </div>
         </div>
+      
+        <button class="ship-now-button" onclick="openShipNowModal()">Ship Now</button>
+      </section>
+      
+      <div id="ship-now-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+          <span class="close-button" onclick="closeShipNowModal()">&times;</span>
+          <h3>Ship Now</h3>
+          <div class="input-container">
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Enter your name" />
+          </div>
+          <div class="input-container">
+            <label for="phone">Phone:</label>
+            <input type="text" id="phone" placeholder="Enter your phone number" />
+          </div>
+          <div class="input-container">
+            <label for="contact-options">Preferred Contact Method:</label>
+            <select id="contact-options">
+              <option value="call">Call</option>
+              <option value="text">Text</option>
+              <option value="email">Email</option>
+            </select>
+          </div>
+          <button id="submit-ship-now" onclick="submitShipNow()">Submit</button>
+        </div>
+      </div>
+      
+          
+          <div id="contact-modal" class="modal" style="display: none;">
+            <div class="modal-content">
+              <span class="close-button" onclick="closeContactModal()">&times;</span>
+              <h3>Contact Options</h3>
+              <p>Please choose your preferred method of contact:</p>
+              <button onclick="openCallModal()">Call</button>
+              <button onclick="openTextModal()">Text</button>
+              <button onclick="openEmailModal()">Email</button>
+            </div>
+          </div>
+          
+          <div id="call-modal" class="modal" style="display: none;">
+            <div class="modal-content">
+              <span class="close-button" onclick="closeCallModal()">&times;</span>
+              <h3>Call</h3>
+              <p>Contact our customer service at <a href="tel:+12027631879">+1 (202) 763-1879</a>.</p>
+            </div>
+          </div>
+          
+          <div id="text-modal" class="modal" style="display: none;">
+            <div class="modal-content">
+              <span class="close-button" onclick="closeTextModal()">&times;</span>
+              <h3>Text</h3>
+              <p>Contact our customer service at <a href="sms:+12027631879">+1 (202) 763-1879</a>.</p>
+            </div>
+          </div>
+          
+          <div id="email-modal" class="modal" style="display: none;">
+            <div class="modal-content">
+              <span class="close-button" onclick="closeEmailModal()">&times;</span>
+              <h3>Email</h3>
+              <p>Contact our customer service at <a href="mailto:info@example.com">info@example.com</a>.</p>
+            </div>
+          </div>
+          
       </section>
 
       <section id="contact">
@@ -214,8 +297,7 @@
         <div class="testimonial">
           <h3>Meskerem Tadesse</h3>
           <p>
-            "አዲስ-ካርጎ ወደ ቤተሰቤ መድኃኒት እንድልክ ፈቀደልኝ። መጥተው ፓኬጁን አነሱ እና ከሳምንት በፊት አሰላምታ
-            ሆኖ በብዛት ታስቸግራለህ።"
+            ""ለቤተሰቦቼ Addis-cargo እንድልክ አስችሎኛል፣ መጥተው ፓኬጁን አንስተው በሰዓቱ አደረሱት።"
           </p>
         </div>
       </section>
@@ -223,7 +305,7 @@
 
     <footer>
       <p>
-        &copy; 2023 Addis-Cargo. All rights reserved. | Designed by Your Name
+        &copy; 2023 Addis-Cargo. All rights reserved. | Designed by Beka Meshesha
       </p>
     </footer>
 
