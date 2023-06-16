@@ -1,3 +1,4 @@
+// Function to send an email when the contact form is submitted
 function sendEmail(event) {
   event.preventDefault(); // Prevent form submission
 
@@ -26,116 +27,153 @@ function sendEmail(event) {
   alert("Thank you for your message. We will get back to you soon.");
 }
 
-// Function to calculate the price and estimated delivery time
-// Function to calculate the price and estimated delivery time
-function calculatePrice() {
-  const itemTypes = {
-    medicine: 15,
-    clothing: 10,
-    electronics: 50,
-    books: 10,
-    "baby-products": 10,
-    shoes: 15,
-    cosmetics: 15,
-    jewelry: 30,
-    "personal-care": 15,
-  };
+// Define the pricing table
+const pricingTable = [
+  {
+    weightRange: "Below 3 Kg",
+    lbRange: "Below 6 lb",
+    priceKg: 45,
+    priceLb: 45,
+  },
+  { weightRange: "3-10 Kg", lbRange: "6-22 lb", priceKg: 18.0, priceLb: 8.16 },
+  {
+    weightRange: "11-50 Kg",
+    lbRange: "23-110 lb",
+    priceKg: 14.0,
+    priceLb: 6.35,
+  },
+  {
+    weightRange: "51-100 Kg",
+    lbRange: "111-220 lb",
+    priceKg: 13.0,
+    priceLb: 5.9,
+  },
+  {
+    weightRange: "101-300 Kg",
+    lbRange: "221-660 lb",
+    priceKg: 12.0,
+    priceLb: 5.45,
+  },
+];
 
-  const deliveryTimes = {
-    standard: "7 to 12 days",
-    express: "5 to 7 days",
-    expedited: "2 to 5 days",
-  };
+// Function to toggle between Kg and lb units
+function toggleUnit(unit) {
+  if (unit === "kg") {
+    // Display Kg unit as active and hide lb unit
+    document.getElementById("kg-button").classList.add("active");
+    document.getElementById("lb-button").classList.remove("active");
+    const kgRanges = document.getElementsByClassName("weight-range-kg");
+    const lbRanges = document.getElementsByClassName("weight-range-lb");
+    const kgPrices = document.getElementsByClassName("price-kg");
+    const lbPrices = document.getElementsByClassName("price-lb");
 
-  // Get selected options from the form
-  const itemType = document.getElementById("item-type").value;
-  const origin = document.getElementById("origin").value;
-  const deliveryOption = document.getElementById("delivery-option").value;
+    // Show Kg ranges and prices, hide lb ranges and prices
+    for (let i = 0; i < kgRanges.length; i++) {
+      kgRanges[i].style.display = "inline";
+      lbRanges[i].style.display = "none";
+      kgPrices[i].style.display = "inline";
+      lbPrices[i].style.display = "none";
+    }
+  } else if (unit === "lb") {
+    // Display lb unit as active and hide Kg unit
+    document.getElementById("kg-button").classList.remove("active");
+    document.getElementById("lb-button").classList.add("active");
+    const kgRanges = document.getElementsByClassName("weight-range-kg");
+    const lbRanges = document.getElementsByClassName("weight-range-lb");
+    const kgPrices = document.getElementsByClassName("price-kg");
+    const lbPrices = document.getElementsByClassName("price-lb");
 
-  // Perform calculations based on the selected options
-  const itemPrice = itemTypes[itemType] || 0;
-  let shippingPrice = 0;
-  let totalPrice = itemPrice;
-
-  if (deliveryOption === "express") {
-    shippingPrice = 10;
-  } else if (deliveryOption === "expedited") {
-    shippingPrice = 20;
+    // Show lb ranges and prices, hide Kg ranges and prices
+    for (let i = 0; i < kgRanges.length; i++) {
+      kgRanges[i].style.display = "none";
+      lbRanges[i].style.display = "inline";
+      kgPrices[i].style.display = "none";
+      lbPrices[i].style.display = "inline";
+    }
   }
-
-  totalPrice += shippingPrice;
-
-  // Update the price in the receipt section
-  const itemPriceElement = document.getElementById("item-price");
-  const shippingPriceElement = document.getElementById("shipping-price");
-  const totalPriceElement = document.getElementById("total-price");
-
-  itemPriceElement.textContent = `$${itemPrice.toFixed(2)}`;
-  shippingPriceElement.textContent = `$${shippingPrice.toFixed(2)}`;
-  totalPriceElement.textContent = `$${totalPrice.toFixed(2)}`;
-
-  // Show "Ship Now" button
-  const shipNowButton = document.getElementById("ship-now-button");
-  shipNowButton.style.display = "block";
 }
 
-// Function to open email client
-function openEmailClient() {
-  // Get the selected options from the form
-  const itemType = document.getElementById("item-type").value;
-  const deliveryOption = document.getElementById("delivery-option").value;
+// Initially, display prices in Kg
+toggleUnit("kg");
 
-  // Get the price result from the page
-  const itemPrice = document.getElementById("item-price").textContent;
-  const shippingPrice = document.getElementById("shipping-price").textContent;
-  const totalPrice = document.getElementById("total-price").textContent;
-  const email = "beka10f@yahoo.com";
-  const subject = "Shipment Estimate";
-  const body = `Hello,\n\nI would like to discuss a shipment with the following details:\n\nItem: ${itemType}\nDelivery Type: ${deliveryOption}\n\nEstimated Prices:\n\nItem Price: ${itemPrice}\nShipping Price: ${shippingPrice}\nTotal Price: ${totalPrice}\n\nLooking forward to your response.\n\nBest regards,`;
+function calculatePrice() {
+  const productDescription = document.getElementById("product-description")
+    .value;
+  const weight = parseFloat(document.getElementById("weight").value);
+  const unit = document.getElementById("unit").value;
+  const origin = document.getElementById("origin").value;
+  const shippingSpeed = document.getElementById("shipping-speed").value;
+  let price = 0;
 
-  // Create a modal for contact options
-  const modal = document.createElement("div");
-  modal.classList.add("modal");
+  // Calculate the price based on the weight and unit
+  if (weight <= 3 && unit === "kg") {
+    price = 50;
+  } else if (weight <= 6 && unit === "lb") {
+    price = 50;
+  } else if (weight > 3 && weight <= 10 && unit === "kg") {
+    price = 18.0 * weight;
+  } else if (weight > 6 && weight <= 22 && unit === "lb") {
+    price = 8.16 * weight;
+  } else if (weight > 10 && weight <= 50 && unit === "kg") {
+    price = 14.0 * weight;
+  } else if (weight > 22 && weight <= 110 && unit === "lb") {
+    price = 6.35 * weight;
+  } else if (weight > 50 && weight <= 100 && unit === "kg") {
+    price = 13.0 * weight;
+  } else if (weight > 110 && weight <= 220 && unit === "lb") {
+    price = 5.9 * weight;
+  } else if (weight > 100 && weight <= 300 && unit === "kg") {
+    price = 12.0 * weight;
+  } else if (weight > 220 && weight <= 660 && unit === "lb") {
+    price = 5.45 * weight;
+  }
 
-  const modalContent = document.createElement("div");
-  modalContent.classList.add("modal-content");
+  // Apply additional calculations based on shipping speed if necessary
+  if (shippingSpeed === "express") {
+    price += 10; // Add express shipping fee
+  } else if (shippingSpeed === "expedited") {
+    price += 20; // Add expedited shipping fee
+  }
 
-  const closeButton = document.createElement("button");
-  closeButton.classList.add("close-button");
-  closeButton.innerHTML = "&times;";
-  closeButton.addEventListener("click", closeModal);
+  // Display the price estimate
+  document.getElementById(
+    "receipt-product-description"
+  ).textContent = productDescription;
+  document.getElementById("receipt-weight").textContent = `${weight} ${unit}`;
+  document.getElementById("receipt-origin").textContent = origin;
+  document.getElementById("receipt-shipping-speed").textContent = shippingSpeed;
+  document.getElementById("receipt-price").textContent = `$${price.toFixed(2)}`;
+}
 
-  const title = document.createElement("h3");
-  title.textContent = "Contact Options";
+function openShipNowModal() {
+  document.getElementById("ship-now-modal").style.display = "block";
+}
 
-  const description = document.createElement("p");
-  description.textContent = "Please choose your preferred method of contact:";
+function closeShipNowModal() {
+  document.getElementById("ship-now-modal").style.display = "none";
+}
 
-  const callButton = document.createElement("button");
-  callButton.textContent = "Call";
-  callButton.addEventListener("click", function () {
-    // Replace the phone number with the appropriate phone number
-    window.location.href = "tel:+12027631879";
-  });
+function submitShipNow() {
+  const name = document.getElementById("name").value;
+  const phone = document.getElementById("phone").value;
+  const contactOptions = document.getElementById("contact-options").value;
+  const estimate = document.getElementById("receipt-price").textContent;
+  const productDescription = document.getElementById("product-description")
+    .value; // grab the product description
 
-  const emailButton = document.createElement("button");
-  emailButton.textContent = "Email";
-  emailButton.addEventListener("click", function () {
-    const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(
-      subject
-    )}&body=${encodeURIComponent(body)}`;
+  // Include the product description in the pre-written text
+  const preWrittenText = `Estimate: ${estimate}\nName: ${name}\nPhone: ${phone}\nProduct Description: ${productDescription}`;
+
+  // Handle the submission according to the chosen contact method
+  if (contactOptions === "call") {
+    window.location.href = `tel:${phone}`;
+  } else if (contactOptions === "text") {
+    const smsLink = `sms:?body=${encodeURIComponent(preWrittenText)}`;
+    window.location.href = smsLink;
+  } else if (contactOptions === "email") {
+    const mailtoLink = `mailto:?subject=Shipping Inquiry&body=${encodeURIComponent(
+      preWrittenText
+    )}`;
     window.location.href = mailtoLink;
-  });
-
-  modalContent.appendChild(closeButton);
-  modalContent.appendChild(title);
-  modalContent.appendChild(description);
-  modalContent.appendChild(callButton);
-  modalContent.appendChild(emailButton);
-  modal.appendChild(modalContent);
-  document.body.appendChild(modal);
-
-  function closeModal() {
-    document.body.removeChild(modal);
   }
 }
