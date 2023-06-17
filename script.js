@@ -158,12 +158,10 @@ function submitShipNow() {
   const phone = document.getElementById("phone").value;
   const contactOptions = document.getElementById("contact-options").value;
   const estimate = document.getElementById("receipt-price").textContent;
-  const productDescription = document.getElementById("product-description")
-    .value;
+  const productDescription = document.getElementById("product-description").value;
   const weight = document.getElementById("receipt-weight").textContent;
   const origin = document.getElementById("receipt-origin").textContent;
-  const shippingSpeed = document.getElementById("receipt-shipping-speed")
-    .textContent;
+  const shippingSpeed = document.getElementById("receipt-shipping-speed").textContent;
   const price = document.getElementById("receipt-price").textContent;
 
   // Include the product description, weight, origin, shipping speed, and price in the pre-written text
@@ -178,9 +176,9 @@ Price: ${price}`;
 
   // Handle the submission according to the chosen contact method
   if (contactOptions === "call") {
-    window.location.href = `tel:2027631879`;
+    window.location.href = `tel:${phone}`;
   } else if (contactOptions === "text") {
-    const smsLink = `sms:2027631879?body=${encodeURIComponent(preWrittenText)}`;
+    const smsLink = `sms:2027631879&body=${encodeURIComponent(preWrittenText)}`;
     window.location.href = smsLink;
   } else if (contactOptions === "email") {
     const mailtoLink = `mailto:beka10f@yahoo.com?subject=Shipping Inquiry&body=${encodeURIComponent(
@@ -188,4 +186,12 @@ Price: ${price}`;
     )}`;
     window.location.href = mailtoLink;
   }
+  
+  // Send email with the entered information
+  const emailData = {
+    to: "beka10f@yahoo.com",
+    subject: "Shipping Inquiry",
+    body: preWrittenText,
+  };
+  Email.send(emailData);
 }
