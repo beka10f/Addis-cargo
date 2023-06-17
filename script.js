@@ -178,7 +178,7 @@ Price: ${price}`;
   if (contactOptions === "call") {
     window.location.href = `tel:${phone}`;
   } else if (contactOptions === "text") {
-    const smsLink = `sms:2027631879&body=${encodeURIComponent(preWrittenText)}`;
+    const smsLink = `sms:2027631879`;
     window.location.href = smsLink;
   } else if (contactOptions === "email") {
     const mailtoLink = `mailto:beka10f@yahoo.com?subject=Shipping Inquiry&body=${encodeURIComponent(
