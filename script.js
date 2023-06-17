@@ -129,9 +129,9 @@ function calculatePrice() {
   }
 
   // Apply additional calculations based on shipping speed if necessary
-  if (shippingSpeed === "express") {
+  if (shippingSpeed === "Express (5 - 7 days)") {
     price += 10; // Add express shipping fee
-  } else if (shippingSpeed === "expedited") {
+  } else if (shippingSpeed === "Expedited (2 - 5 days)") {
     price += 20; // Add expedited shipping fee
   }
 
@@ -159,22 +159,33 @@ function submitShipNow() {
   const contactOptions = document.getElementById("contact-options").value;
   const estimate = document.getElementById("receipt-price").textContent;
   const productDescription = document.getElementById("product-description")
-    .value; // grab the product description
+    .value;
+  const weight = document.getElementById("receipt-weight").textContent;
+  const origin = document.getElementById("receipt-origin").textContent;
+  const shippingSpeed = document.getElementById("receipt-shipping-speed")
+    .textContent;
+  const price = document.getElementById("receipt-price").textContent;
 
-  // Include the product description in the pre-written text
-  const preWrittenText = `Estimate: ${estimate}\nName: ${name}\nPhone: ${phone}\nProduct Description: ${productDescription}`;
+  // Include the product description, weight, origin, shipping speed, and price in the pre-written text
+  const preWrittenText = `Estimate: ${estimate}
+Name: ${name}
+Phone: ${phone}
+Product Description: ${productDescription}
+Weight: ${weight}
+Origin: ${origin}
+Shipping Speed: ${shippingSpeed}
+Price: ${price}`;
 
   // Handle the submission according to the chosen contact method
   if (contactOptions === "call") {
-    window.location.href = `tel:${phone}`;
+    window.location.href = `tel:2027631879`;
   } else if (contactOptions === "text") {
-    const smsLink = `sms:?body=${encodeURIComponent(preWrittenText)}`;
+    const smsLink = `sms:2027631879?body=${encodeURIComponent(preWrittenText)}`;
     window.location.href = smsLink;
   } else if (contactOptions === "email") {
-    const mailtoLink = `mailto:?subject=Shipping Inquiry&body=${encodeURIComponent(
+    const mailtoLink = `mailto:beka10f@yahoo.com?subject=Shipping Inquiry&body=${encodeURIComponent(
       preWrittenText
     )}`;
     window.location.href = mailtoLink;
   }
 }
-
