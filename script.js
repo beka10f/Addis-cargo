@@ -176,7 +176,7 @@ Price: ${price}`;
 
   // Handle the submission according to the chosen contact method
   if (contactOptions === "call") {
-    window.location.href = `tel:${phone}`;
+    window.location.href = `2027631879`;
   } else if (contactOptions === "text") {
     const smsLink = `sms:2027631879`;
     window.location.href = smsLink;
