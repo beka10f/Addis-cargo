@@ -1,839 +1,592 @@
+/* Reset CSS */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* General Styles */
+/* Global Styles */
 body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  color: #333;
-  background-color: #fff; /* Set background color to white */
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden; /* Hide horizontal scrollbar */
-  max-width: 100%; /* Prevent body from overflowing viewport */
+  font-family: 'San Francisco', Arial, sans-serif;
+  color: #333333;
+  background-color: #ffffff;
 }
 
 .container {
-  width: 100%; /* Set width to 100% */
-  margin: 0;
+  max-width: 1300px;
+  margin: 0 auto;
   padding: 20px;
-  background-color: #fff; /* Set background color to white */
-}
-
-h1,
-h2,
-h3 {
-  color: #333;
-  margin-bottom: 20px;
-  font-weight: bold;
-}
-
-p {
-  margin-bottom: 10px;
 }
 
 a {
   color: #007bff;
   text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #0056b3;
 }
 
 /* Header */
 header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #ffffff;
+  border-bottom: 1px solid #cccccc;
   padding: 20px;
-  background-color: white;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  
-}
-main {
-  margin: 0 auto; /* Center the main content horizontally */
-  max-width: 1200px; /* Set a maximum width for the main content */
 }
 
 .header-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
-}
-
-.logo {
-  margin: 15px;
-  padding: 10px;
-}
-
-nav ul {
-  list-style-type: none;
-  display: flex;
-  align-items: center;
-  margin: 0;
-  padding: 0;
-}
-
-nav ul li {
-  margin-left: 20px;
-}
-
-nav {
-  margin-left: auto;
-}
-
-header a {
-  color: #333;
-  text-decoration: none;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: color 0.3s;
-}
-
-header a:hover {
-  color: #007bff;
-}
-
-
-/* how it works */
-
-#how-it-works {
-  background-color: #f6f6f6;
-  padding: 40px 0;
-  text-align: center;
-}
-
-.container {
-  margin: 0 auto;
   max-width: 1300px;
-  display: flex;
-  justify-content: center;
-}
-
-#how-it-works h2 {
-  text-align: left;
-  font-size: 40px;
-  margin-bottom: 30px;
-  font-family: 'Arial', sans-serif;
-  color: #007bff;
-  margin-left: 58px;
-  padding-left: 20px;
-  margin-top: 10px;
-}
-
-#how-it-works .steps-container {
-    display: flex;
-    align-items: stretch; /* This ensures that the items inside are stretched to equal heights. */
-    flex-wrap: wrap;
-    font-family: 'Playfair Display', sans-serif;
-    max-width: 95%;
-    margin-left: 55px;
-}
-
-#how-it-works .step {
-  flex: 1;
-  background-color: #ffffff;
-  padding: 30px;
-  border-radius: 8px;
-  box-sizing: border-box;
-  box-shadow: none;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  margin: 20px;
-  color: #333333;
-  font-family: 'Roboto', sans-serif;
-  font-size: 16px;
-  line-height: 26px;
-  text-align: initial;
-  letter-spacing: .2px;
-  transition: none;
-}
-
-#how-it-works .step i {
-  font-size: 40px;
-  margin-bottom: 20px;
-  color: #007bff;
-  align-self: flex-start;
-  animation: none;
-}
-
-#how-it-works .step p {
-  text-align: left;
-  margin-bottom: 10px;
-  font-weight: 300;
-}
-
-#how-it-works a {
-  color: #007bff;
-}
-
-#how-it-works .footer-text {
-  margin-top: 30px;
-  font-size: 18px;
-  color: #000;
-}
-
-@media (max-width: 767px) {
-  #how-it-works {
-    padding: 20px 0;
-  }
-
-  #how-it-works h2 {
-    font-size: 28px;
-    margin-left: 12px;
-  }
-
-  #how-it-works .steps-container {
-    flex-direction: column;
-    margin-left: 12px;
-        gap: 10px;
-  }
-
-  #how-it-works .step {
-    padding: 20px;
-    margin: 10px;
-    font-size: 14px;
-    line-height: 20px;
-  }
-
-  #how-it-works .step i {
-    font-size: 30px;
-  }
-
-  #how-it-works .footer-text {
-    font-size: 14px;
-  }
-
-  #how-it-works .step {
-    margin-bottom: 10px;
-  }
-
-  #how-it-works .step:last-child {
-    margin-bottom: 0;
-  }
-}
-
-
-
-/* Testimonials */
-section#testimonials {
-  text-align: center;
-  padding: 20px;
-}
-
-section#testimonials .testimonial {
-  background-color: #f5f5f5;
-  color: #333;
-  padding: 30px;
-  margin-bottom: 30px;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-section#testimonials .testimonial h3 {
-  margin-bottom: 10px;
-  color: #007bff;
-}
-
-/* Pricing */
-.pricing-table h2 {
-  font-size: 32px;
-  font-weight: 600;
-  text-align: center;
-  margin-bottom: 20px;
-  color: #333;
-}
-
-.pricing-table #weight-info {
-  padding: 10px;
-  background-color: #fff; /* White background for a clean look */
-  border-left: 3px solid #3f51b5; /* A left border for a modern design touch */
-  margin-bottom: 10px;
-  font-size: 14px;
-  color: #333;
-  font-family: "Helvetica", "Arial", sans-serif; /* A clean, sans-serif font */
-}
-
-#weight-info span {
-  font-weight: bold;
-  color: #3f51b5; /* Match the color of the border */
-}
-
-.pricing-table {
-  text-align: center;
-  padding: 30px;
-  background-color: #efefef;
-  border-radius: 10px;
-
-}
-
-table {
-  width: 100%;
-  margin-top: 20px;
-  border-collapse: collapse;
-  border: none;
-}
-
-th,
-td {
-  padding: 15px;
-  font-weight: normal;
-}
-
-th {
-  background-color: transparent;
-  color: #000;
-  font-size: 19px;
-  border-bottom: none;
-}
-
-tr:nth-child(even) {
-  background-color: #f9f9f9;
-}
-
-.weight-range-lb {
-  display: none;
-}
-
-.price-lb {
-  display: none;
-}
-
-#unit-clicker button {
-  border: none;
-  background-color: transparent;
-  color: #777;
-  cursor: pointer;
-  font-size: 14px;
-  margin-right: 10px;
-  padding: 8px 16px;
-  transition: background-color 0.3s, color 0.3s;
-  outline: none;
-  border-radius: 30px;
-  border: 1px solid #777; /* Add a border for better visibility */
-}
-
-#unit-clicker button.active {
-  color: #fff;
-  background-color: #007bff; /* Use a more vibrant color for active state */
-  font-weight: bold;
-  border: 1px solid #007bff; /* Adjust the border color for active state */
-}
-
-#unit-clicker button:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.3); /* Add a subtle focus ring */
-}
-
-#unit-clicker button:hover {
-  color: #fff;
-  background-color: #007bff;
-  border-color: #007bff; /* Adjust the border color on hover */
-}
-
-
-/* Contact */
-section#contact {
-  text-align: center;
-  padding: 50px;
-  margin: 90px;
-  border-radius: 10px;
-  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
-}
-
-section#contact h2 {
-  font-size: 24px;
-  color: #007bff;
-  margin-bottom: 20px;
-}
-
-section#contact p {
-  margin-bottom: 10px;
-}
-
-section#contact .contact-details {
-  margin-bottom: 20px;
-}
-
-section#contact .contact-details p{
-  margin: 0;
-}
-
-section#contact .contact-details strong {
-  font-weight: bold;
-}
-
-section#contact form {
-  margin-top: 20px;
-}
-
-section#contact label {
-  display: block;
-  margin-bottom: 5px;
-}
-
-section#contact input,
-section#contact textarea {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-section#contact button[type="submit"] {
-  background-color: #007bff;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-section#contact button[type="submit"]:hover {
-  background-color: #0056b3;
-}
-
-/* Footer */
-footer {
-  background-color: #007bff;
-  padding: 10px 0;
-  text-align: center;
-  color: #fff;
-}
-
-footer p {
-  margin: 0;
-}
-
-/* Responsive Styles */
-@media (max-width: 600px) {
-  .container {
-    max-width: 100%;
-  }
-
-  #shipment-request {
-    display: block;
-  }
-}
-
-@media (min-width: 601px) {
-  #shipment-request {
-    display: flex;
-  }
-}
-
-/* Shipment Request */
-/* Button */
-button {
-  display: inline-block;
-  padding: 0.5em 1.5em;
-  text-decoration: none;
-  background: #6699cc;
-  color: #FFFFFF;
-  border-radius: 4px;
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
-  transition: all 0.2s;
-}
-
-button:hover {
-  background: #4477aa;
-}
-
-/* Home Container */
-.home-container {
-  display: flex;
-  justify-content: center; /* Center items horizontally */
-  margin: 0 auto; /* Center container */
-  padding: 20px;
-
-}
-
-@media screen and (min-width: 768px) {
-  .home-container {
-    justify-content: space-between; /* Add equal spacing between items */
-    padding-left: 40px; /* Adjust the left padding */
-    padding-right: 40px; /* Adjust the right padding */
-  }
-}
-
-/* Shipment Request */
-#shipment-request {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  margin:5px auto;
   width: 100%;
 }
-
-#shipment-request p {
-  font-size: 16px;
-  line-height: 1.6;
-  color: #333;
-  font-family: "Roboto", Arial, sans-serif; /* Update font-family to a modern font */
-  font-weight: 400; /* Use a normal font weight for better readability */
-}
-
-/* Info Section *//* Shipment Request */
-#shipment-request {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; /* Align items to the left */
-  width: 100%;
-  margin-bottom: 40px; /* Increase the bottom margin to move the section lower */
-}
-
-#shipment-request p {
-  font-size: 16px;
-  line-height: 1.6;
-  color: #333;
-  font-family: "Roboto", Arial, sans-serif;
-  font-weight: 400;
-  margin-top: 0; /* Remove the default top margin */
-}
-
-/* Info Section */
-.info-section {
-  flex: 2;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start; /* Align items to the left */
-  font-size: 2.5em;
-  font-weight: 600;
-  padding: 0 20px;
-  font-family: "Raleway", Arial, sans-serif;
-  margin-bottom: 20px; /* Add margin bottom to create space between sections */
-}
-
-.info-section h3 {
-  font-size: 45px;
-  color: #007bff;
-  margin-top: 0;
-  font-weight: 500;
-}
-
-.info-section h3 .highlight {
-  font-weight: bold;
-  font-size: 45px;
-}
-
-
-
-.info-section p {
-  margin: 0;
-}
-
-button.home-ship {
-  padding: 12px 24px;
-  margin-top: 20px;
-  border-radius: 5px;
-  background-color: #007bff !important;
-  color: #ffffff;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s;
-  display: block;
-  position: absolute;
-  left: 20px;
-  top: 20px;
-  transform: translateX(-50%);
-}
-
-
-
-/* Calculator Section */
-.calculator-section {
-  flex: 1;
-  background-color: #f0f0f0;
-  padding: 20px;
-  border-radius: 5px;
-  margin-top: 80px;
-  margin-right: 60px;
-  margin-left: 10px; /* Adjust the left margin to move the calculator section to the left */
-  width: calc(100% - 20px);
-}
-
-
-/* Input Container */
-.input-container {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 15px;
-}
-
-.input-container label {
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-.input-container input[type="text"],
-.input-container input[type="number"],
-.input-container select {
-  padding: 10px;
-  border: 1px solid #ccc;
-  font-size: 14px;
-  border-radius: 2px;
-  color: #000;
-  background-color: #fff;
-  width: -webkit-fill-available;
-  border-radius: 7px;
-
-}
-/* Form Container */
-.form-container {
-  margin-bottom: 20px;
-}
-
-.form-container h2 {
-  font-size: 24px;
-  color: #000;
-}
-
-
-#shipment-request #calculate-price-btn {
-  padding: 12px 24px;
-  margin-top: 20px;
-  border-radius: 5px;
-  background-color: #007bff;
-  color: #ffffff;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s;
-  width: 100%;  
-}
-
-#shipment-request #home-ship {
-  padding: 12px 24px;
-  margin-top: 20px;
-  border-radius: 5px;
-  background-color: #004080;
-  color: #ffffff;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s;
-}
-
-
-
 
 .logo {
   width: 200px;
   height: auto;
   margin-bottom: 10px;
-  margin-top: 5px;
+  margin-top: 5px;}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-#about {
+nav li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+nav a {
+  font-family: 'San Francisco', Arial, sans-serif;
+  font-size: 18px;
+  color: #333333;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #000000;
+}
+
+.home-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #ffffff;
+  font-family: 'San Francisco', Arial, sans-serif;
+  font-size: 18px;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.home-button:hover {
+  background-color: #0056b3;
+}
+
+
+/* Service Section */
+#service {
+  background-color: #ffffff;
+  padding: 100px 20px;
+}
+
+#service .container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  
+}
+
+#service .container .description {
+  flex: 1;
+  padding-right: 60px;
+  
+}
+
+#service .container .illustration {
+  flex: 1;
+}
+
+#service .container .illustration img {
+  width: 100%;
+  max-width: 600px;
+}
+
+#service .container h1 {
+  font-family: 'San Francisco', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 45px;
+  font-weight: bold;
+  color: #027bff;
+    margin-bottom: 20px;
+}
+
+#service .container p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 400;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+#service .container h3 {
+  font-family: 'San Francisco', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  color: #027bff;
+  margin-bottom: 10px;
+}
+
+#service .container ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #000;
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 400;
+  margin-top: 0;
+}
+
+#service .container li {
+  font-family: 'San Francisco', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  color: #000;
+  margin-bottom: 5px;
+}
+
+
+
+/* how it works*/
+#how-it-works {
+  background-color: #f6f6f6;
+  padding: 40px 0;
+}
+
+.container {
+  margin: 0 auto;
+}
+
+h2 {
+  text-align: left;
+  font-size: 40px;
+  margin-bottom: 55px;
+  font-family: 'Arial', sans-serif;
+}
+
+.steps {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  font-family: 'Playfair Display', sans-serif;
+}
+
+.step {
+  flex: 1;
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.step i {
+  font-size: 40px;
+  margin-bottom: 20px;
+  color: #007bff;
+  align-self: flex-start;
+}
+
+.step h3,
+.step p {
+  text-align: left;
+  margin-bottom: 10px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  text-align: initial;
+  letter-spacing: .2px;
+  line-height: 26px;
+}
+.step p{
+  font-weight: 300;
+}
+
+.step-description {
+  font-size: 14px;
+  color: #333333;
+  font-family: 'Arial', sans-serif;
+}
+
+@media (max-width: 767px) {
+  .steps {
+    flex-direction: column;
+  }
+
+  .step {
+    margin-bottom: 20px;
+  }
+
+  .step:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .steps {
+    flex-direction: column;
+  }
+
+  .step {
+    margin-bottom: 20px;
+  }
+
+  .step:last-child {
+    margin-bottom: 0;
+  }
+}
+#websites {
+  background-color: #ffffff;
+  padding: 30px 20px;
+  max-width: 1300px;
+
+  margin: 36px auto;}
+
+#websites .container {
+  padding: 20px;
+}
+
+#websites h2 {
+  text-align: left;
+  font-size: 40px;
+  margin-bottom: 45px;
+  font-family: 'San Francisco', Arial, sans-serif;
+      color: #333333;
+  
+}
+
+#websites .website-buttons {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+#websites .website-button {
+  padding: 20px;
+  border: none;
+  border-radius: 10px;
+  background-color: #ffffff;
+  font-family: 'Arial', sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  color: #000000;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  box-shadow: 0 0px 7px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+#websites .website-button:hover {
+  background-color: #000000;
+  color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#websites .website-button:focus {
+  outline: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#websites .website-button:active {
+  transform: translateY(1px);
+}
+
+
+/* Footer */
+footer {
+  background-color: #f6f6f6;
   padding: 20px;
   text-align: center;
 }
-@media screen and (max-width: 600px) {
-  body, html {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden; /* Prevent horizontal scrolling */
-    font-size: 16px; /* base font size */
-  }
 
-  /* Set box-sizing to border-box for all elements */
-  *, *:before, *:after {
-    box-sizing: border-box;
-    
-  }
-
-  /* Set the font-size for headers */header, section, .container, .calculator-section, .content, nav ul {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  /* ... Rest of your styles ... */
-
-  .contact, .header-container, .home-container, #shipment-request {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
-    width: 100%;
-  }
-  header h1 {
-    font-size: 1.5em; /* based on base font size */
-  }
-  h3 {
-    font-size: 1.2em; /* based on base font size */
-  }
-
-  /* Make navigation more suitable for mobile */
-  nav ul {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0;
-  }
-  nav li {
-    margin: 10px 0;
-  }
-
-  /* Simplify the content layout */
-  .content {
-    width: 100%;
-    margin: 0;
-    padding: 10px;
-  }
-  .content img {
-    width: 100%;
-    height: auto;
-  }
-  .content p {
-    text-align: justify;
-  }
-
-  /* Simplify the footer layout */
-  footer {
-    text-align: center;
-    padding: 10px 0;
-  }
-
-  /* Simplify the calculator and call to ship layout */
-  .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .calculator {
-    order: 2;
-    width: 100%;
-  }
-  .call-to-ship {
-    order: 1;
-    width: 100%;
-  }
-
-  /* Simplify other layout elements */
-  header,
-  .header-container,
-  .home-container,
-  #shipment-request {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  /* Simplify the calculator section */
-  .calculator-section {
-    margin: 20px 0;
-    padding: 15px;
-    width: 100%;
-    border-radius: 10px;
-  }
-
-  /* Style for highlighted text and contact section */
-  .info-section h3 .highlight {
-    /* Adjust font size and other properties as required */
-    font-size: 24px;
+.footer-links ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
-.info-section h3 {
-    /* Adjust font size and other properties as required */
-    font-size: 20px;
-    padding-top: 30px;
+.footer-links ul li {
+  display: inline-block;
+  margin-right: 10px;
 }
-  section#contact {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    margin: 10px;
-    width: auto;
-  }
 
-  /* Hide navigation and adjust the logo */
-  
-  .header-container .logo {
-    display: block;
-    margin: 0 auto;
-  }
-
-  /* Adjust sections to fit screen width */
-  section {
-    width: 100%;
-    box-sizing: border-box;
-    padding: 0 10px; /* Add some padding if needed */
-  }
-  
-  img, iframe, .how-to-section {
-    max-width: 100%;
-  }
-
-  .how-to-section {
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-  }
-}
-.shop-ship-button {
-  background-color: #007bff;
-  color: #ffffff;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+.footer-links ul li a {
+  font-size: 14px;
+  color: #333333;
   text-decoration: none;
 }
 
-
-.shop-ship-button:hover {
-  background-color: #005ea3;
+.social-media {
+  margin-top: 10px;
 }
 
-/* Apple-inspired button styles */
-.shop-ship-button {
-  font-family: "San Francisco", "Helvetica Neue", Arial, sans-serif;
+.social-icon {
+  display: inline-block;
+  margin-right: 10px;
+  color: #333333;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.social-icon i {
+  transition: color 0.3s ease;
+}
+
+.social-icon:hover i {
+  color: #007bff;
+}
+
+#order-form {
+  background-color: #f6f6f6;
+  padding: 40px 0;
+}
+
+#order-form .container {
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+#order-form h2 {
+  text-align: left;
+  font-size: 24px;
+  margin-bottom: 30px;
+  font-family: 'San Francisco', 'Helvetica', Arial, sans-serif;
+}
+
+#order-form form {
+  display: grid;
+  gap: 20px;
+}
+
+#order-form .form-field {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  align-items: center;
+}
+
+#order-form label {
+  text-align: left;
+  font-size: 16px;
   font-weight: bold;
-  text-transform: uppercase;
+  font-family: 'San Francisco', 'Helvetica', Arial, sans-serif;
+}
+
+#order-form input[type="text"],
+#order-form input[type="email"],
+#order-form textarea,
+#order-form select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background-color: #ffffff;
+  font-family: 'San Francisco', 'Helvetica', Arial, sans-serif;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Center the button text */
-.shop-ship-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+#order-form ::placeholder {
+  color: #999999;
+}
+
+#order-form select {
+  appearance: none;
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  font-family: 'San Francisco', 'Helvetica', Arial, sans-serif;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#order-form select option {
+  font-family: 'San Francisco', 'Helvetica', Arial, sans-serif;
+}
+
+#order-form button[type="submit"] {
+  display: inline-block;
+  background-color: #007bff;
+  color: #ffffff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-family: 'San Francisco', 'Helvetica', Arial, sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#order-form button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+#order-form .form-field textarea {
+  width: 100%;
+  height: 120px;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background-color: #ffffff;
+  font-family: 'San Francisco', 'Helvetica', Arial, sans-serif;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#order-form .form-field label {
+  text-align: left;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'San Francisco', 'Helvetica', Arial, sans-serif;
+}
+
+#order-form .form-field textarea::placeholder {
+  color: #999999;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.addis-cargo-desc {
+  text-align: left;
+}
+
+.addis-cargo-title {
+  font-size: 2em;
+  color: #333;
+}
+
+.addis-cargo-subtitle {
+  font-size: 1.2em;
+  color: #777;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.cta-button {
+  display: inline-block;
+  font-size: 1em;
+  color: #fff;
+  background-color: #007BFF;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #0056b3;
+  color: #fff;
+
 }
 
 
-@media screen and (max-width: 600px) {
-  /* Reduce padding and font size of the button */
-  .shop-ship-button {
-    padding: 8px 16px;
-    font-size: 14px;
-    
+.watch-this {
+  font-size: 1.5em;
+  color: #333;
+  margin: 10px 0;
+  font-weight: 300;
+}
+
+.addis-cargo-video {
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.addis-cargo-video video {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
   }
 
-  /* Show only the "Shop and Ship" button and center it */
-  .header-container .shop-ship-button {
-    display: block;
-    margin-right: 100px; 
+  .logo {
+    width: 150px;
+    margin: 0 auto;
   }
 
-  /* Show the logo */
-  header .header-container .logo {
-    display: block;
-    margin: 0;
+  nav ul {
+    text-align: center;
+    padding-top: 20px;
   }
 
-  /* Hide specific list items */
-  header .header-container nav ul li:not(:first-child) {
-    display: none;
+  .home-button {
+    width: 100%;
   }
+
+  #service .container {
+    flex-direction: column;
+  }
+
+  #service .container .description {
+    padding-right: 0;
+  }
+
+  .steps {
+    flex-direction: column;
+  }
+
+  .step {
+    margin-bottom: 20px;
+  }
+
+  .step:last-child {
+    margin-bottom: 0;
+  }
+
+  #websites .website-buttons {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #order-form .form-field {
+    grid-template-columns: 1fr;
+  }
+  nav li {
+    display: inline-block;
+    margin-right: 0px;
+}
+#service .container h1 {
+  font-size: 35px;
+}
+#service {
+  background-color: #ffffff;
+  padding: 65px 20px;
+}
+/* Header for smaller screens */
+ 
+
 }
