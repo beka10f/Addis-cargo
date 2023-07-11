@@ -1,186 +1,84 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Addis-cargo</title>
-    <link rel="stylesheet" type="text/css" href="styles.css" />
-    <script src="https://smtpjs.com/v3/smtp.js"></script> <!-- Added script tag for SMTPJS library -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  </head>
-  <body>
-    <header>
+<head>
+  <title>Addis-cargo</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://smtpjs.com/v3/smtp.js"></script> <!-- Added script tag for SMTPJS library -->
+</head>
+<body>
+  <header>
+    <div class="header-container">
       <img src="addis-cargo-HD.png" alt="Addis Cargo Logo" class="logo" />
-      <h1>Welcome to Addis-Cargo</h1>
-      <p>Your trusted shipping service for the Ethiopian diaspora</p>
-    </header>
-
-    <nav>
-      <ul>
-        <li><a href="#pricing">Pricing</a></li>
-        <li><a href="#shipment-request">Shipment Request</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#about">About Us</a></li>
-      </ul>
-    </nav>
-
-    <div class="container">
-      <section id="how-it-works">
-        <h2>How It Works</h2>
+      <nav>
         <ul>
-          <li>Contact us to schedule a pickup for your shipment.</li>
-          <li>Our team will come to your desired location and collect the items.</li>
-          <li>We will transport your shipment to our drop-off locations in Addis Ababa.</li>
-          <li>Our dedicated colleagues will receive your items and securely store them until they are ready for transit.</li>
-          <li>Upon the arrival of your shipment, you have the option to personally pick it up or arrange for delivery to your address.</li>
+          <li><a href="shop&ship.html" target="_blank" rel="noopener"><button class="shop-ship-button">Shop & Ship</button></a></li> <!-- Modified link as a button -->
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#about">About Us</a></li>
         </ul>
+      </nav>
+    </div>
+  </header>
+    
+    <section id="shipment-request">
+      <div class="home-container">
+        <section class="info-section">
+          <div class="info-container">
+            <h3><span class="highlight"> Send Anything, Anytime </span> - your TV, phone, clothes, shoes, whatever you need.</h3>
+            <p>Addis-Cargo: Your shipping partner for the Ethiopian diaspora, bringing affordable rates, reliable delivery, and a sprinkle of convenience to your doorstep!</p>
+          </div>
+          <a href="tel:+12027631879">
+            <button id="home-ship">Call now to ship</button>
+          </a>
+        </section>
+    
+        <section class="calculator-section">
+          <div class="form-container">
+            <h2>Shipping Calculator</h2>
         
-        <p>
-          For more information or to schedule a shipment,
-          <a href="#contact">contact us</a> and we'll assist you every step of
-          the way.
-        </p>
-      </section>
-      <section id="pricing">
-        <div class="pricing-table">
-          <h2>Pricing</h2>
-          <div id="unit-clicker">
-            <button id="kg-button" class="active" onclick="toggleUnit('kg')">
-              Kg
-            </button>
-            <button id="lb-button" onclick="toggleUnit('lb')">Lb</button>
-          </div>
-          <table>
-            <tr>
-              <th>Weight Range</th>
-              <th>Price per Unit</th>
-            </tr>
-            <tr>
-              <td>
-                <span class="weight-range-kg">Below 3 Kg</span>
-                <span class="weight-range-lb" style="display: none"
-                  >Below 6 lb</span
-                >
-              </td>
-              <td>
-                <span class="price-kg">$50</span>
-                <span class="price-lb" style="display: none">$50</span>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <span class="weight-range-kg">3-10 Kg</span>
-                <span class="weight-range-lb" style="display: none"
-                  >6-22 lb</span
-                >
-              </td>
-              <td>
-                <span class="price-kg">$18.00</span>
-                <span class="price-lb" style="display: none">$8.16</span>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <span class="weight-range-kg">11-50 Kg</span>
-                <span class="weight-range-lb" style="display: none"
-                  >23-110 lb</span
-                >
-              </td>
-              <td>
-                <span class="price-kg">$14.00</span>
-                <span class="price-lb" style="display: none">$6.35</span>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <span class="weight-range-kg">51-100 Kg</span>
-                <span class="weight-range-lb" style="display: none"
-                  >111-220 lb</span
-                >
-              </td>
-              <td>
-                <span class="price-kg">$13.00</span>
-                <span class="price-lb" style="display: none">$5.90</span>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <span class="weight-range-kg">101-300 Kg</span>
-                <span class="weight-range-lb" style="display: none"
-                  >221-660 lb</span
-                >
-              </td>
-              <td>
-                <span class="price-kg">$12.00</span>
-                <span class="price-lb" style="display: none">$5.45</span>
-              </td>
-            </tr>
-          </table>
-          <div id="weight-info">
-            Please note, items under <span>6 pounds or 3 kg</span> do not incur a per unit charge.
-          </div>
-        </div>
-      </section>
+            <div class="input-container">
+              <label for="weight">Weight:</label>
+              <div class="input-group">
+                <input type="number" id="weight" placeholder="Enter weight">
+                <select id="unit">
+                  <option value="kg">Kg</option>
+                  <option value="lb">Lb</option>
+                </select>
+              </div>
+            </div>
+            </div>
+            <div class="input-container">
+              <label for="pickup-location">Pickup Location</label>
+              <select id="pickup-location" name="pickup-location">
+                <option value="Washington DC">Washington DC</option>
+                <option value="Maryland">Maryland</option>
+                <option value="Virginia">Virginia</option>
+              </select>
+              
+            </div>
+            
+           
+            
+              <div class="input-container">
+                <label for="shipping-speed">Shipping Speed:</label>
+                <select id="shipping-speed">
+                  <option value="Standard Shipping (7 - 12 days) - Free">Standard Shipping (7 - 12 days) - Free</option>
+                  <option value="Express Shipping (5 - 7 days) - $10">Express Shipping (5 - 7 days) - $10</option>
+                  <option value="Expedited Shipping (2 - 5 days) - $20">Expedited Shipping (2 - 5 days) - $20</option>
+                  
+                </select>
+              </div>
+              <button id="calculate-price-btn" onclick="calculatePrice()">Calculate Price</button>
 
-      <section id="shipment-request">
-        <div class="form-container">
-          <h2>Shipping Calculator</h2>
-          <div class="input-container">
-            <label for="product-description">Product Description:</label>
-            <input type="text" id="product-description" placeholder="Enter product description" />
+            </div>
           </div>
-          <div class="input-container">
-            <label for="weight">Weight:</label>
-            <input type="number" id="weight" placeholder="Enter weight" />
-            <select id="unit">
-              <option value="kg">Kg</option>
-              <option value="lb">Lb</option>
-            </select>
-          </div>
-          <div class="input-container">
-            <label for="origin">Origin:</label>
-            <select id="origin">
-              <option value="Washington, D.C.">Washington, D.C</option>
-              <option value="Maryland">Maryland</option>
-              <option value="virginia">Virginia</option>
-            </select>
-          </div>
-          <div class="input-container">
-            <label for="shipping-speed">Shipping Speed:</label>
-            <select id="shipping-speed">
-              <option value="Standard (7 - 12 days)">Standard - 7 to 12 days</option>
-                <option value="Express (5 - 7 days)">$10 (Express - 5 to 7 days)</option>
-                <option value="Expedited (2 - 5 days)">$20 (Expedited - 2 to 5 days)</option>
-            </select>
-          </div>
-          <button onclick="calculatePrice()">Calculate Price</button>
-        </div>
+    
+        </section>
+    
       
-        <div class="receipt-container">
-          <h3>Receipt</h3>
-          <div class="receipt-row">
-            <span class="receipt-label">Product Description:</span>
-            <span id="receipt-product-description"></span>
-          </div>
-          <div class="receipt-row">
-            <span class="receipt-label">Weight:</span>
-            <span id="receipt-weight"></span>
-          </div>
-         
-          <div class="receipt-row">
-            <span class="receipt-label">Origin:</span>
-            <span id="receipt-origin"></span>
-          </div>
-          <div class="receipt-row">
-            <span class="receipt-label">Shipping Speed:</span>
-            <span id="receipt-shipping-speed"></span>
-          </div>
-          <div class="receipt-row">
-            <span class="receipt-label">Price:</span>
-            <span id="receipt-price"></span>
-          </div>
-        </div>
       
-        <button class="ship-now-button" onclick="openShipNowModal()">Ship Now</button>
-      </section>
+    
       
       <div id="ship-now-modal" class="modal" style="display: none;">
         <div class="modal-content">
@@ -218,10 +116,123 @@
             </div>
           </div>
           
-          
+          <section id="pricing">
+            <div class="pricing-table">
+              <h2>Pricing</h2>
+              <div id="unit-clicker">
+                <button id="kg-button" class="active" onclick="toggleUnit('kg')">
+                  Kg
+                </button>
+                <button id="lb-button" onclick="toggleUnit('lb')">Lb</button>
+              </div>
+              <table>
+                <tr>
+                  <th>Weight Range</th>
+                  <th>Price per Unit</th>
+                </tr>
+                <tr>
+                  <td>
+                    <span class="weight-range-kg">Below 3 Kg</span>
+                    <span class="weight-range-lb" style="display: none"
+                      >Below 6 lb</span
+                    >
+                  </td>
+                  <td>
+                    <span class="price-kg">$50</span>
+                    <span class="price-lb" style="display: none">$50</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <span class="weight-range-kg">3-10 Kg</span>
+                    <span class="weight-range-lb" style="display: none"
+                      >6-22 lb</span
+                    >
+                  </td>
+                  <td>
+                    <span class="price-kg">$18.00</span>
+                    <span class="price-lb" style="display: none">$8.16</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <span class="weight-range-kg">11-50 Kg</span>
+                    <span class="weight-range-lb" style="display: none"
+                      >23-110 lb</span
+                    >
+                  </td>
+                  <td>
+                    <span class="price-kg">$14.00</span>
+                    <span class="price-lb" style="display: none">$6.35</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <span class="weight-range-kg">51-100 Kg</span>
+                    <span class="weight-range-lb" style="display: none"
+                      >111-220 lb</span
+                    >
+                  </td>
+                  <td>
+                    <span class="price-kg">$13.00</span>
+                    <span class="price-lb" style="display: none">$5.90</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <span class="weight-range-kg">101-300 Kg</span>
+                    <span class="weight-range-lb" style="display: none"
+                      >221-660 lb</span
+                    >
+                  </td>
+                  <td>
+                    <span class="price-kg">$12.00</span>
+                    <span class="price-lb" style="display: none">$5.45</span>
+                  </td>
+                </tr>
+              </table>
+              <div id="weight-info">
+                Please note, items under <span>6 pounds or 3 kg</span> do not incur a per unit charge.
+              </div>
+            </div>
+          </section>
           
       </section>
-
+      <section id="how-it-works">
+        <h2>How It Works</h2>
+        <div class="steps-container">
+            <div class="step">
+                <i class="fas fa-phone"></i>
+                <h3>Step 1</h3>
+                <p>Contact us to schedule a pickup for your shipment.</p>
+            </div>
+            <div class="step">
+                <i class="fas fa-truck"></i>
+                <h3>Step 2</h3>
+                <p>Our team will come to your desired location and collect the items.</p>
+            </div>
+            <div class="step">
+                <i class="fas fa-plane"></i>
+                <h3>Step 3</h3>
+                <p>We will transport your shipment to our drop-off locations in Addis Ababa.</p>
+            </div>
+            <div class="step">
+                <i class="fas fa-warehouse"></i>
+                <h3>Step 4</h3>
+                <p>Our dedicated colleagues will receive and securely store your items.</p>
+            </div>
+            <div class="step">
+                <i class="fas fa-truck"></i>
+                <h3>Step 5</h3>
+                <p>Choose to pick up your shipment or arrange delivery to your address.</p>
+            </div>
+        </div>
+        <p class="footer-text">
+            For more information or to schedule a shipment, <a href="#contact">contact us</a> and we'll assist you every step of the way.
+        </p>
+    </section>
+    
+      
       <section id="contact">
         <h2>Contact Information</h2>
         <p>For any inquiries or concerns, please reach out to us:</p>
@@ -286,7 +297,7 @@
         &copy; 2023 Addis-Cargo. All rights reserved. | Designed by Beka Meshesha
       </p>
     </footer>
-
+<script>src=" https://smtpjs.com/v3/smtp.js"</script>
     <script src="script.js"></script>
   </body>
 </html>
