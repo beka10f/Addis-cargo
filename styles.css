@@ -646,6 +646,7 @@ button.home-ship {
   /* Set box-sizing to border-box for all elements */
   *, *:before, *:after {
     box-sizing: border-box;
+    
   }
 
   /* Set the font-size for headers */header, section, .container, .calculator-section, .content, nav ul {
@@ -755,9 +756,7 @@ button.home-ship {
   }
 
   /* Hide navigation and adjust the logo */
-  nav {
-    display: none;
-  }
+  
   .header-container .logo {
     display: block;
     margin: 0 auto;
@@ -812,10 +811,28 @@ button.home-ship {
   justify-content: center;
 }
 
-/* Adjust the button size for smaller screens */
-@media only screen and (max-width: 600px) {
+
+@media screen and (max-width: 600px) {
+  /* Reduce padding and font size of the button */
   .shop-ship-button {
     padding: 8px 16px;
     font-size: 14px;
+    
+  }
+
+  /* Show only the "Shop and Ship" button and center it */
+  .header-container .shop-ship-button {
+    display: block;
+    margin-right: 80px;  }
+
+  /* Show the logo */
+  header .header-container .logo {
+    display: block;
+    margin: 0;
+  }
+
+  /* Hide specific list items */
+  header .header-container nav ul li:not(:first-child) {
+    display: none;
   }
 }
