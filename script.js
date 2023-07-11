@@ -59,6 +59,7 @@ const pricingTable = [
 // Function to toggle between Kg and lb units
 function toggleUnit(unit) {
   if (unit === "kg") {
+
     // Display Kg unit as active and hide lb unit
     document.getElementById("kg-button").classList.add("active");
     document.getElementById("lb-button").classList.remove("active");
@@ -97,11 +98,9 @@ function toggleUnit(unit) {
 toggleUnit("kg");
 
 function calculatePrice() {
-  const productDescription = document.getElementById("product-description")
-    .value;
   const weight = parseFloat(document.getElementById("weight").value);
   const unit = document.getElementById("unit").value;
-  const origin = document.getElementById("origin").value;
+  const pickupLocation = document.getElementById("pickup-location").value;
   const shippingSpeed = document.getElementById("shipping-speed").value;
   let price = 0;
 
@@ -135,63 +134,23 @@ function calculatePrice() {
     price += 20; // Add expedited shipping fee
   }
 
-  // Display the price estimate
-  document.getElementById(
-    "receipt-product-description"
-  ).textContent = productDescription;
-  document.getElementById("receipt-weight").textContent = `${weight} ${unit}`;
-  document.getElementById("receipt-origin").textContent = origin;
-  document.getElementById("receipt-shipping-speed").textContent = shippingSpeed;
-  document.getElementById("receipt-price").textContent = `$${price.toFixed(2)}`;
+  // Save the calculated information to local storage
+  localStorage.setItem("weight", `${weight} ${unit}`);
+  localStorage.setItem("pickupLocation", pickupLocation);
+  localStorage.setItem("price", `$${price.toFixed(2)}`);
+  localStorage.setItem("shippingSpeed", shippingSpeed); // Add this line
+
+  // Construct the query parameters
+  const queryParams = `weight=${encodeURIComponent(
+    weight
+  )}&unit=${encodeURIComponent(unit)}&pickupLocation=${encodeURIComponent(
+    pickupLocation
+  )}&shippingSpeed=${encodeURIComponent(
+    shippingSpeed
+  )}&price=${encodeURIComponent(price.toFixed(2))}`;
+
+  // Redirect to the "ship_now.html" page with the query parameters
+  window.location.href = `ship_now.html?${queryParams}`;
 }
 
-function openShipNowModal() {
-  document.getElementById("ship-now-modal").style.display = "block";
-}
-
-function closeShipNowModal() {
-  document.getElementById("ship-now-modal").style.display = "none";
-}
-
-function submitShipNow() {
-  const name = document.getElementById("name").value;
-  const phone = document.getElementById("phone").value;
-  const contactOptions = document.getElementById("contact-options").value;
-  const estimate = document.getElementById("receipt-price").textContent;
-  const productDescription = document.getElementById("product-description").value;
-  const weight = document.getElementById("receipt-weight").textContent;
-  const origin = document.getElementById("receipt-origin").textContent;
-  const shippingSpeed = document.getElementById("receipt-shipping-speed").textContent;
-  const price = document.getElementById("receipt-price").textContent;
-
-  // Include the product description, weight, origin, shipping speed, and price in the pre-written text
-  const preWrittenText = `Estimate: ${estimate}
-Name: ${name}
-Phone: ${phone}
-Product Description: ${productDescription}
-Weight: ${weight}
-Origin: ${origin}
-Shipping Speed: ${shippingSpeed}
-Price: ${price}`;
-
-  // Handle the submission according to the chosen contact method
-  if (contactOptions === "call") {
-    window.location.href = `tel:2027631879`;
-  } else if (contactOptions === "text") {
-    const smsLink = `sms:2027631879`;
-    window.location.href = smsLink;
-  } else if (contactOptions === "email") {
-    const mailtoLink = `mailto:beka10f@yahoo.com?subject=Shipping Inquiry&body=${encodeURIComponent(
-      preWrittenText
-    )}`;
-    window.location.href = mailtoLink;
-  }
-  
-  // Send email with the entered information
-  const emailData = {
-    to: "beka10f@yahoo.com",
-    subject: "Shipping Inquiry",
-    body: preWrittenText,
-  };
-  Email.send(emailData);
-}
+///////
