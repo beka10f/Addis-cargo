@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>View Quote</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    body {
+      font-family: "San Francisco", "Helvetica Neue", Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      margin: 50px auto;
+      padding: 20px;
+      max-width: 600px;
+      background-color: #ffffff;
+      border-radius: 10px;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin: 0;
+      color: #333333;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    section {
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #333333;
+      display: flex;
+      align-items: center;
+    }
+
+    .icon {
+      margin-right: 10px;
+      color: #0070c9;
+    }
+
+    .delivery-location {
+      color: #0070c9;
+      margin-left: auto;
+    }
+
+    .contact-buttons {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .contact-button {
+      background-color: #0070c9;
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-right: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+    }
+
+    .contact-button:hover {
+      background-color: #005ea3;
+    }
+
+    .header {
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .back-button {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      color: #0070c9;
+    }
+
+    #quote-section span {
+      /* Add your desired styles here */
+      /* For example: */
+      color: #0070c9;
+      font-weight: normal;
+      margin-left: auto;
+    }
+
+    @media only screen and (max-width: 600px) {
+      .container {
+        margin: 20px auto;
+        padding: 10px;
+        max-width: 90%;
+      }
+
+      h1 {
+        font-size: 20px;
+      }
+
+      p {
+        font-size: 16px;
+        align-items: flex-start; /* Adjust alignment for better readability */
+      }
+
+      .icon {
+        margin-right: 5px; /* Reduce the margin */
+      }
+
+      .delivery-location {
+        font-weight: bold; /* Make delivery location bold for emphasis */
+      }
+
+      .contact-button {
+        padding: 8px 16px;
+        font-size: 14px;
+        margin-right: 5px;
+      }
+      
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .back-button {
+        margin-bottom: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <button class="back-button" onclick="goBack()"><i class="fas fa-chevron-left"></i> Back</button>
+      <h1>View Quote</h1>
+    </div>
+    <section id="quote-section">
+      <p><i class="fas fa-dollar-sign icon"></i> Estimated Price: <span id="calculated-price"></span></p>
+      <p><i class="fas fa-weight-hanging icon"></i> Weight: <span id="weight-info"></span></p>
+      <p><i class="fas fa-map-marker-alt icon"></i> Pickup Location: <span id="pickup-location-info"></span></p>
+      <p><i class="fas fa-map-marker-alt icon"></i> Delivery Location: <span class="delivery-location">Addis Ababa</span></p>
+      <p><i class="fas fa-clock icon"></i> Delivery Speed: <span id="shipping-speed-info"></span></p>
+      <p style="text-align: center; font-size: 16px; color: #333333;">To proceed with shipping, choose an option below:</p>
+      <div class="contact-buttons" style="text-align: center;">
+        <a href="tel:+2027631879" class="contact-button">Call</a>
+        <a href="sms:+2027631879" class="contact-button">Text</a>
+        <a href="#" onclick="sendEmail()" class="contact-button">Email</a>
+      </div>
+    </div>
+    <script>
+      // Retrieve the data from localStorage
+      const price = localStorage.getItem("price");
+      const weight = localStorage.getItem("weight");
+      const pickupLocation = localStorage.getItem("pickupLocation");
+      const shippingSpeed = localStorage.getItem("shippingSpeed");
+  
+      // Update the elements in the HTML
+      document.getElementById("calculated-price").textContent = price;
+      document.getElementById("weight-info").textContent = weight;
+      document.getElementById("pickup-location-info").textContent = pickupLocation;
+      document.getElementById("shipping-speed-info").textContent = shippingSpeed;
+  
+      // Clear the stored data from localStorage
+      localStorage.removeItem("price");
+      localStorage.removeItem("weight");
+      localStorage.removeItem("pickupLocation");
+      localStorage.removeItem("shippingSpeed");
+  
+      // Function to go back to the previous page
+      function goBack() {
+        window.history.back();
+      }
+      
+      // Function to send the email with preloaded information
+      function sendEmail() {
+        const calculatedPrice = document.getElementById("calculated-price").textContent;
+        const weightInfo = document.getElementById("weight-info").textContent;
+        const pickupLocationInfo = document.getElementById("pickup-location-info").textContent;
+        const shippingSpeedInfo = document.getElementById("shipping-speed-info").textContent;
+        const deliveryLocation = "Addis Ababa";
+        
+        const subject = "Shipping Quote";
+        const body = `Estimated Price: ${calculatedPrice}
+        Weight: ${weightInfo}
+        Pickup Location: ${pickupLocationInfo}
+        Delivery Location: ${deliveryLocation}
+        Delivery Speed: ${shippingSpeedInfo}`;
+  
+        const emailLink = `mailto:beka10f@yahoo.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        
+        window.location.href = emailLink;
+      }
+    </script>
+</body>
+</html>
+
+
+
+
+

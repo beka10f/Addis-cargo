@@ -1,0 +1,591 @@
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+  font-family: 'San Francisco', Arial, sans-serif;
+  color: #333333;
+  background-color: #ffffff;
+}
+
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #0056b3;
+}
+
+/* Header */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #ffffff;
+  border-bottom: 1px solid #cccccc;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1300px;
+  margin:5px auto;
+  width: 100%;
+}
+
+.logo {
+  width: 200px;
+  height: auto;
+  margin-bottom: 10px;
+  margin-top: 5px;}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+nav a {
+  font-family: 'San Francisco', Arial, sans-serif;
+  font-size: 18px;
+  color: #333333;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #000000;
+}
+
+.home-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #ffffff;
+  font-family: 'San Francisco', Arial, sans-serif;
+  font-size: 18px;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.home-button:hover {
+  background-color: #0056b3;
+}
+
+
+/* Service Section */
+#service {
+  background-color: #ffffff;
+  padding: 100px 20px;
+}
+
+#service .container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  
+}
+
+#service .container .description {
+  flex: 1;
+  padding-right: 60px;
+  
+}
+
+#service .container .illustration {
+  flex: 1;
+}
+
+#service .container .illustration img {
+  width: 100%;
+  max-width: 600px;
+}
+
+#service .container h1 {
+  font-family: 'San Francisco', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 45px;
+  font-weight: bold;
+  color: #027bff;
+    margin-bottom: 20px;
+}
+
+#service .container p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 400;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+#service .container h3 {
+  font-family: 'San Francisco', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  color: #027bff;
+  margin-bottom: 10px;
+}
+
+#service .container ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #000;
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 400;
+  margin-top: 0;
+}
+
+#service .container li {
+  font-family: 'San Francisco', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  color: #000;
+  margin-bottom: 5px;
+}
+
+
+
+/* how it works*/
+#how-it-works {
+  background-color: #f6f6f6;
+  padding: 40px 0;
+}
+
+.container {
+  margin: 0 auto;
+}
+
+h2 {
+  text-align: left;
+  font-size: 40px;
+  margin-bottom: 55px;
+  font-family: 'Arial', sans-serif;
+}
+
+.steps {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  font-family: 'Playfair Display', sans-serif;
+}
+
+.step {
+  flex: 1;
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.step i {
+  font-size: 40px;
+  margin-bottom: 20px;
+  color: #007bff;
+  align-self: flex-start;
+}
+
+.step h3,
+.step p {
+  text-align: left;
+  margin-bottom: 10px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  text-align: initial;
+  letter-spacing: .2px;
+  line-height: 26px;
+}
+.step p{
+  font-weight: 300;
+}
+
+.step-description {
+  font-size: 14px;
+  color: #333333;
+  font-family: 'Arial', sans-serif;
+}
+
+@media (max-width: 767px) {
+  .steps {
+    flex-direction: column;
+  }
+
+  .step {
+    margin-bottom: 20px;
+  }
+
+  .step:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .steps {
+    flex-direction: column;
+  }
+
+  .step {
+    margin-bottom: 20px;
+  }
+
+  .step:last-child {
+    margin-bottom: 0;
+  }
+}
+#websites {
+  background-color: #ffffff;
+  padding: 30px 20px;
+  max-width: 1300px;
+
+  margin: 36px auto;}
+
+#websites .container {
+  padding: 20px;
+}
+
+#websites h2 {
+  text-align: left;
+  font-size: 40px;
+  margin-bottom: 45px;
+  font-family: 'San Francisco', Arial, sans-serif;
+      color: #333333;
+  
+}
+
+#websites .website-buttons {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+#websites .website-button {
+  padding: 20px;
+  border: none;
+  border-radius: 10px;
+  background-color: #ffffff;
+  font-family: 'Arial', sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  color: #000000;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  box-shadow: 0 0px 7px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+#websites .website-button:hover {
+  background-color: #000000;
+  color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#websites .website-button:focus {
+  outline: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#websites .website-button:active {
+  transform: translateY(1px);
+}
+
+
+/* Footer */
+footer {
+  background-color: #f6f6f6;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-links ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-links ul li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.footer-links ul li a {
+  font-size: 14px;
+  color: #333333;
+  text-decoration: none;
+}
+
+.social-media {
+  margin-top: 10px;
+}
+
+.social-icon {
+  display: inline-block;
+  margin-right: 10px;
+  color: #333333;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.social-icon i {
+  transition: color 0.3s ease;
+}
+
+.social-icon:hover i {
+  color: #007bff;
+}
+
+#order-form {
+  background-color: #f6f6f6;
+  padding: 40px 0;
+}
+
+#order-form .container {
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+#order-form h2 {
+  text-align: left;
+  font-size: 24px;
+  margin-bottom: 30px;
+  font-family: 'San Francisco', 'Helvetica', Arial, sans-serif;
+}
+
+#order-form form {
+  display: grid;
+  gap: 20px;
+}
+
+#order-form .form-field {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  align-items: center;
+}
+
+#order-form label {
+  text-align: left;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'San Francisco', 'Helvetica', Arial, sans-serif;
+}
+
+#order-form input[type="text"],
+#order-form input[type="email"],
+#order-form textarea,
+#order-form select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background-color: #ffffff;
+  font-family: 'San Francisco', 'Helvetica', Arial, sans-serif;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#order-form ::placeholder {
+  color: #999999;
+}
+
+#order-form select {
+  appearance: none;
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  font-family: 'San Francisco', 'Helvetica', Arial, sans-serif;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#order-form select option {
+  font-family: 'San Francisco', 'Helvetica', Arial, sans-serif;
+}
+
+#order-form button[type="submit"] {
+  display: inline-block;
+  background-color: #007bff;
+  color: #ffffff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-family: 'San Francisco', 'Helvetica', Arial, sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#order-form button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+#order-form .form-field textarea {
+  width: 100%;
+  height: 120px;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background-color: #ffffff;
+  font-family: 'San Francisco', 'Helvetica', Arial, sans-serif;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#order-form .form-field label {
+  text-align: left;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'San Francisco', 'Helvetica', Arial, sans-serif;
+}
+
+#order-form .form-field textarea::placeholder {
+  color: #999999;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.addis-cargo-desc {
+  text-align: left;
+}
+
+.addis-cargo-title {
+  font-size: 2em;
+  color: #333;
+}
+
+.addis-cargo-subtitle {
+  font-size: 1.2em;
+  color: #777;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.cta-button {
+  display: inline-block;
+  font-size: 1em;
+  color: #fff;
+  background-color: #007BFF;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #0056b3;
+  color: #fff;
+
+}
+
+
+.watch-this {
+  font-size: 1.5em;
+  color: #333;
+  margin: 10px 0;
+}
+
+.addis-cargo-video {
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.addis-cargo-video video {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+  }
+
+  .logo {
+    width: 150px;
+    margin: 0 auto;
+  }
+
+  nav ul {
+    text-align: center;
+    padding-top: 20px;
+  }
+
+  .home-button {
+    width: 100%;
+  }
+
+  #service .container {
+    flex-direction: column;
+  }
+
+  #service .container .description {
+    padding-right: 0;
+  }
+
+  .steps {
+    flex-direction: column;
+  }
+
+  .step {
+    margin-bottom: 20px;
+  }
+
+  .step:last-child {
+    margin-bottom: 0;
+  }
+
+  #websites .website-buttons {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #order-form .form-field {
+    grid-template-columns: 1fr;
+  }
+  nav li {
+    display: inline-block;
+    margin-right: 0px;
+}
+#service .container h1 {
+  font-size: 35px;
+}
+#service {
+  background-color: #ffffff;
+  padding: 65px 20px;
+}
+/* Header for smaller screens */
+ 
+
+}
