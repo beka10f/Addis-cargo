@@ -1,17 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 /* General Styles */
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
   color: #333;
-  background-color: #f5f5f5;
+  background-color: #fff; /* Set background color to white */
   margin: 0;
   padding: 0;
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+  max-width: 100%; /* Prevent body from overflowing viewport */
 }
 
 .container {
-  max-width: 960px;
-  margin: 0 auto;
+  width: 100%; /* Set width to 100% */
+  margin: 0;
   padding: 20px;
+  background-color: #fff; /* Set background color to white */
 }
 
 h1,
@@ -19,6 +28,7 @@ h2,
 h3 {
   color: #333;
   margin-bottom: 20px;
+  font-weight: bold;
 }
 
 p {
@@ -32,112 +42,186 @@ a {
 
 /* Header */
 header {
-  text-align: center;
-  padding: 20px 0;
-  padding-bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  
+}
+main {
+  margin: 0 auto; /* Center the main content horizontally */
+  max-width: 1200px; /* Set a maximum width for the main content */
 }
 
-/* Navigation */
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.logo {
+  margin: 15px;
+  padding: 10px;
+}
+
 nav ul {
   list-style-type: none;
   display: flex;
-  justify-content: center;
+  align-items: center;
+  margin: 0;
   padding: 0;
-  margin-bottom: 40px;
 }
 
 nav ul li {
-  margin: 0 10px;
+  margin-left: 20px;
 }
 
-/* Sections */
-section {
-  margin-bottom: 50px;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
+nav {
+  margin-left: auto;
 }
 
-section h2 {
-  font-size: 24px;
+header a {
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s;
+}
+
+header a:hover {
   color: #007bff;
-  margin-bottom: 20px;
+}
+
+
+/* how it works */
+
+#how-it-works {
+  background-color: #f6f6f6;
+  padding: 40px 0;
   text-align: center;
 }
 
-/* How It Works */
-section#how-it-works {
-  text-align: center;
+.container {
+  margin: 0 auto;
+  max-width: 1300px;
+  display: flex;
+  justify-content: center;
 }
 
-section#how-it-works ul {
-  list-style: none;
-  padding: 0;
+#how-it-works h2 {
+  text-align: left;
+  font-size: 40px;
+  margin-bottom: 30px;
+  font-family: 'Arial', sans-serif;
+  color: #007bff;
+  margin-left: 58px;
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+#how-it-works .steps-container {
+    display: flex;
+    align-items: stretch; /* This ensures that the items inside are stretched to equal heights. */
+    flex-wrap: wrap;
+    font-family: 'Playfair Display', sans-serif;
+    max-width: 95%;
+    margin-left: 55px;
+}
+
+#how-it-works .step {
+  flex: 1;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 8px;
+  box-sizing: border-box;
+  box-shadow: none;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: flex-start;
+  margin: 20px;
+  color: #333333;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 26px;
+  text-align: initial;
+  letter-spacing: .2px;
+  transition: none;
 }
 
-section#how-it-works ul li {
+#how-it-works .step i {
+  font-size: 40px;
   margin-bottom: 20px;
+  color: #007bff;
+  align-self: flex-start;
+  animation: none;
+}
+
+#how-it-works .step p {
   text-align: left;
-  position: relative;
-  padding-left: 30px;
+  margin-bottom: 10px;
+  font-weight: 300;
 }
 
-section#how-it-works ul li:last-child:after {
-  display: none;
+#how-it-works a {
+  color: #007bff;
 }
 
-section#how-it-works ul li.active:before {
-  background-color: #ff9800;
+#how-it-works .footer-text {
+  margin-top: 30px;
+  font-size: 18px;
+  color: #000;
 }
 
-section#how-it-works ul li.active:after {
-  border-left: 2px dashed #ff9800;
-}
-
-/* Animation */
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(-20px);
+@media (max-width: 767px) {
+  #how-it-works {
+    padding: 20px 0;
   }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
+
+  #how-it-works h2 {
+    font-size: 28px;
+    margin-left: 12px;
+  }
+
+  #how-it-works .steps-container {
+    flex-direction: column;
+    margin-left: 12px;
+        gap: 10px;
+  }
+
+  #how-it-works .step {
+    padding: 20px;
+    margin: 10px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  #how-it-works .step i {
+    font-size: 30px;
+  }
+
+  #how-it-works .footer-text {
+    font-size: 14px;
+  }
+
+  #how-it-works .step {
+    margin-bottom: 10px;
+  }
+
+  #how-it-works .step:last-child {
+    margin-bottom: 0;
   }
 }
 
-section#how-it-works ul li {
-  animation: fadeIn 0.5s ease-in-out;
-  animation-fill-mode: both;
-}
 
-section#how-it-works ul li:nth-child(1) {
-  animation-delay: 0s;
-}
-
-section#how-it-works ul li:nth-child(2) {
-  animation-delay: 0.2s;
-}
-
-section#how-it-works ul li:nth-child(3) {
-  animation-delay: 0.4s;
-}
-
-section#how-it-works ul li:nth-child(4) {
-  animation-delay: 0.6s;
-}
-
-section#how-it-works ul li:nth-child(5) {
-  animation-delay: 0.8s;
-}
 
 /* Testimonials */
 section#testimonials {
   text-align: center;
+  padding: 20px;
 }
 
 section#testimonials .testimonial {
@@ -155,7 +239,15 @@ section#testimonials .testimonial h3 {
 }
 
 /* Pricing */
-#weight-info {
+.pricing-table h2 {
+  font-size: 32px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.pricing-table #weight-info {
   padding: 10px;
   background-color: #fff; /* White background for a clean look */
   border-left: 3px solid #3f51b5; /* A left border for a modern design touch */
@@ -172,6 +264,10 @@ section#testimonials .testimonial h3 {
 
 .pricing-table {
   text-align: center;
+  padding: 30px;
+  background-color: #efefef;
+  border-radius: 10px;
+
 }
 
 table {
@@ -189,8 +285,8 @@ td {
 
 th {
   background-color: transparent;
-  color: #777;
-  font-size: 16px;
+  color: #000;
+  font-size: 19px;
   border-bottom: none;
 }
 
@@ -206,13 +302,6 @@ tr:nth-child(even) {
   display: none;
 }
 
-#unit-clicker {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 #unit-clicker button {
   border: none;
   background-color: transparent;
@@ -220,36 +309,37 @@ tr:nth-child(even) {
   cursor: pointer;
   font-size: 14px;
   margin-right: 10px;
-  padding: 5px 10px;
-  transition: all 0.3s ease-in-out;
+  padding: 8px 16px;
+  transition: background-color 0.3s, color 0.3s;
   outline: none;
   border-radius: 30px;
+  border: 1px solid #777; /* Add a border for better visibility */
 }
 
 #unit-clicker button.active {
   color: #fff;
-  background-color: #000;
+  background-color: #007bff; /* Use a more vibrant color for active state */
   font-weight: bold;
+  border: 1px solid #007bff; /* Adjust the border color for active state */
 }
 
 #unit-clicker button:focus {
   outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.3); /* Add a subtle focus ring */
 }
 
 #unit-clicker button:hover {
   color: #fff;
-  background-color: #000;
+  background-color: #007bff;
+  border-color: #007bff; /* Adjust the border color on hover */
 }
+
 
 /* Contact */
 section#contact {
   text-align: center;
-}
-
-section#contact {
-  background-color: #f5f5f5;
-  padding: 30px;
-  margin-bottom: 30px;
+  padding: 50px;
+  margin: 90px;
   border-radius: 10px;
   box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
 }
@@ -268,7 +358,7 @@ section#contact .contact-details {
   margin-bottom: 20px;
 }
 
-section#contact .contact-details p {
+section#contact .contact-details p{
   margin: 0;
 }
 
@@ -337,223 +427,174 @@ footer p {
 }
 
 /* Shipment Request */
+/* Button */
+button {
+  display: inline-block;
+  padding: 0.5em 1.5em;
+  text-decoration: none;
+  background: #6699cc;
+  color: #FFFFFF;
+  border-radius: 4px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s;
+}
+
+button:hover {
+  background: #4477aa;
+}
+
+/* Home Container */
+.home-container {
+  display: flex;
+  justify-content: center; /* Center items horizontally */
+  margin: 0 auto; /* Center container */
+  padding: 20px;
+
+}
+
+@media screen and (min-width: 768px) {
+  .home-container {
+    justify-content: space-between; /* Add equal spacing between items */
+    padding-left: 40px; /* Adjust the left padding */
+    padding-right: 40px; /* Adjust the right padding */
+  }
+}
+
 /* Shipment Request */
 #shipment-request {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
+#shipment-request p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  font-family: "Roboto", Arial, sans-serif; /* Update font-family to a modern font */
+  font-weight: 400; /* Use a normal font weight for better readability */
+}
+
+/* Info Section *//* Shipment Request */
+#shipment-request {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align items to the left */
+  width: 100%;
+  margin-bottom: 40px; /* Increase the bottom margin to move the section lower */
+}
+
+#shipment-request p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 400;
+  margin-top: 0; /* Remove the default top margin */
+}
+
+/* Info Section */
+.info-section {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start; /* Align items to the left */
+  font-size: 2.5em;
+  font-weight: 600;
+  padding: 0 20px;
+  font-family: "Raleway", Arial, sans-serif;
+  margin-bottom: 20px; /* Add margin bottom to create space between sections */
+}
+
+.info-section h3 {
+  font-size: 45px;
+  color: #007bff;
+  margin-top: 0;
+  font-weight: 500;
+}
+
+.info-section h3 .highlight {
+  font-weight: bold;
+  font-size: 45px;
+}
+
+
+
+.info-section p {
+  margin: 0;
+}
+
+button.home-ship {
+  padding: 12px 24px;
+  margin-top: 20px;
+  border-radius: 5px;
+  background-color: #007bff !important;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  display: block;
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  transform: translateX(-50%);
+}
+
+
+
+/* Calculator Section */
+.calculator-section {
+  flex: 1;
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 5px;
+  margin-top: 80px;
+  margin-right: 60px;
+  margin-left: 10px; /* Adjust the left margin to move the calculator section to the left */
+  width: calc(100% - 20px);
+}
+
+
+/* Input Container */
+.input-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.input-container label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.input-container input[type="text"],
+.input-container input[type="number"],
+.input-container select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  border-radius: 2px;
+  color: #000;
+  background-color: #fff;
+  width: -webkit-fill-available;
+  border-radius: 7px;
+
+}
+/* Form Container */
 .form-container {
-  flex-basis: 100%;
-  max-width: 100%;
   margin-bottom: 20px;
-  padding: 30px;
-  background-color: #f5f5f5;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .form-container h2 {
-  margin-bottom: 20px;
   font-size: 24px;
-  color: #333333;
-}
-
-.form-container .input-container {
-  margin-bottom: 20px;
-}
-
-.form-container label {
-  display: block;
-  margin-bottom: 10px;
-  font-weight: bold;
-  color: #555555;
-}
-
-.form-container input[type="number"],
-.form-container select,
-.form-container input[type="text"] {
-  width: 100%;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  font-size: 14px;
-  color: #555555;
-  background-color: #fff;
-  transition: border-color 0.3s;
-}
-
-.form-container input[type="number"]:focus,
-.form-container select:focus,
-.form-container input[type="text"]:focus {
-  outline: none;
-  border-color: #007bff;
-}
-
-.form-container button {
-  padding: 12px 24px;
-  margin-top: 20px;
-  border-radius: 5px;
-  background-color: #007bff;
-  color: #ffffff;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s;
-}
-
-.form-container button:hover {
-  background-color: #0056b3;
-}
-
-.receipt-container {
-  flex-basis: 100%;
-  max-width: 100%;
-  padding: 30px;
-  background-color: #f5f5f5;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.receipt-container h3 {
-  margin-bottom: 20px;
-  font-size: 24px;
-  color: #333333;
-}
-
-.receipt-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.receipt-label {
-  font-weight: bold;
-  color: #555555;
-}
-
-.total-row {
-  margin-top: 20px;
-  border-top: 1px solid #ccc;
-  padding-top: 10px;
-}
-
-#product-description {
-  width: 100%;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  font-size: 14px;
-  color: #555555;
-  background-color: #fff;
-  transition: border-color 0.3s;
-}
-
-#ship-now-button {
-  padding: 12px 24px;
-  border-radius: 5px;
-  background-color: #007bff;
-  color: #ffffff;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s;
-}
-
-#ship-now-button:hover {
-  background-color: #0056b3;
-}
-
-/* Modal */
-.modal {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 80%;
-  max-width: 500px;
-  background-color: #fff;
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.2);
-  z-index: 9999;
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.modal-content {
-  width: 100%;
-  text-align: center;
-  font-size: 18px;
-  line-height: 1.6;
-}
-
-.close-button {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background: none;
-  border: none;
-  font-size: 30px;
-  color: #555;
-  cursor: pointer;
-  transition: color 0.2s;
-}
-
-.close-button:hover {
   color: #000;
 }
 
-.modal h3 {
-  margin-bottom: 15px;
-  color: #333;
-  font-size: 24px;
-  font-weight: 600;
-}
 
-.modal p {
-  color: #555;
-  margin-bottom: 25px;
-  font-size: 16px;
-}
-
-.modal button {
-  padding: 10px 20px;
-  font-size: 18px;
-  color: #fff;
-  background-color: #007bff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-.modal button:hover {
-  background-color: #0056b3;
-}
-/* Input and Select styles */
-.modal input[type="text"],
-.modal select {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  background-color: #f8f8f8;
-  font-size: 16px;
-  transition: border 0.3s;
-}
-
-.modal input[type="text"]:focus,
-.modal select:focus {
-  border: 2px solid #007bff;
-}
-#shipment-request button {
+#shipment-request #calculate-price-btn {
   padding: 12px 24px;
   margin-top: 20px;
   border-radius: 5px;
@@ -563,13 +604,218 @@ footer p {
   cursor: pointer;
   font-size: 16px;
   transition: background-color 0.3s;
-  margin: 5px auto;
-  display: block;
+  width: 100%;  
 }
+
+#shipment-request #home-ship {
+  padding: 12px 24px;
+  margin-top: 20px;
+  border-radius: 5px;
+  background-color: #004080;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+
+
 
 .logo {
   width: 200px;
   height: auto;
   margin-bottom: 10px;
   margin-top: 5px;
+}
+
+#about {
+  padding: 20px;
+  text-align: center;
+}
+@media screen and (max-width: 600px) {
+  body, html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    font-size: 16px; /* base font size */
+  }
+
+  /* Set box-sizing to border-box for all elements */
+  *, *:before, *:after {
+    box-sizing: border-box;
+  }
+
+  /* Set the font-size for headers */header, section, .container, .calculator-section, .content, nav ul {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* ... Rest of your styles ... */
+
+  .contact, .header-container, .home-container, #shipment-request {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+  }
+  header h1 {
+    font-size: 1.5em; /* based on base font size */
+  }
+  h3 {
+    font-size: 1.2em; /* based on base font size */
+  }
+
+  /* Make navigation more suitable for mobile */
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+  nav li {
+    margin: 10px 0;
+  }
+
+  /* Simplify the content layout */
+  .content {
+    width: 100%;
+    margin: 0;
+    padding: 10px;
+  }
+  .content img {
+    width: 100%;
+    height: auto;
+  }
+  .content p {
+    text-align: justify;
+  }
+
+  /* Simplify the footer layout */
+  footer {
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  /* Simplify the calculator and call to ship layout */
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .calculator {
+    order: 2;
+    width: 100%;
+  }
+  .call-to-ship {
+    order: 1;
+    width: 100%;
+  }
+
+  /* Simplify other layout elements */
+  header,
+  .header-container,
+  .home-container,
+  #shipment-request {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Simplify the calculator section */
+  .calculator-section {
+    margin: 20px 0;
+    padding: 15px;
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  /* Style for highlighted text and contact section */
+  .info-section h3 .highlight {
+    /* Adjust font size and other properties as required */
+    font-size: 24px;
+}
+
+.info-section h3 {
+    /* Adjust font size and other properties as required */
+    font-size: 20px;
+    padding-top: 30px;
+}
+  section#contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin: 10px;
+    width: auto;
+  }
+
+  /* Hide navigation and adjust the logo */
+  nav {
+    display: none;
+  }
+  .header-container .logo {
+    display: block;
+    margin: 0 auto;
+  }
+
+  /* Adjust sections to fit screen width */
+  section {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 10px; /* Add some padding if needed */
+  }
+  
+  img, iframe, .how-to-section {
+    max-width: 100%;
+  }
+
+  .how-to-section {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.shop-ship-button {
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+
+.shop-ship-button:hover {
+  background-color: #005ea3;
+}
+
+/* Apple-inspired button styles */
+.shop-ship-button {
+  font-family: "San Francisco", "Helvetica Neue", Arial, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Center the button text */
+.shop-ship-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Adjust the button size for smaller screens */
+@media only screen and (max-width: 600px) {
+  .shop-ship-button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
 }
