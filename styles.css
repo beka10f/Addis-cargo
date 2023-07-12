@@ -823,7 +823,7 @@ button.home-ship {
   /* Show only the "Shop and Ship" button and center it */
   .header-container .shop-ship-button {
     display: block;
-    margin-right: 80px;  }
+    margin-right: 120px;  }
 
   /* Show the logo */
   header .header-container .logo {
