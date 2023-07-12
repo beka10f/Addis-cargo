@@ -722,3 +722,72 @@ tr:nth-child(even) {
   background-color: #007bff;
   border-color: #007bff;
 }
+
+/* Important Notes section */
+#important-notes {
+  background-color: #ffffff;
+  padding: 40px;
+  line-height: 1.6;
+}
+
+#important-notes .container {
+  margin: 0 auto;
+  padding: 25px;
+  max-width: 1200px; /* Adjust the maximum width as per your preference */
+}
+
+#important-notes .notes-title {
+  font-size: 32px;
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 40px;
+  font-family: "San Francisco", Arial, sans-serif;
+  text-align: center;
+}
+
+#important-notes .notes-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#important-notes .notes-list li {
+  background-color: #f5f5f5;
+  padding: 20px;
+  width: calc(50% - 10px); /* Adjust the width and spacing as per your preference */
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: 300;
+  font-family: "San Francisco", Arial, sans-serif;
+  color: #000000;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+  #important-notes .container {
+    padding: 15px;
+    max-width: 100%; /* Adjust the maximum width as per your preference */
+    
+  }
+
+  #important-notes .notes-list li {
+    width: 100%;
+    margin-right: 0;
+  }
+  #important-notes {
+    padding: 0;
+}
+  #important-notes .notes-title {
+    padding: 10px;
+    margin-bottom: 10px;
+    text-align: left;
+  }
+}
+.highlight {
+  color: #000; /* Apply the desired text color for highlighting */
+  font-weight: 600; /* Apply additional styles such as bold if desired */
+}
