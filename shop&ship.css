@@ -507,8 +507,6 @@ footer {
   color: #fff;
 
 }
-
-
 .watch-this {
   font-size: 1.5em;
   color: #333;
@@ -516,18 +514,58 @@ footer {
   font-weight: 300;
 }
 
+.addis-cargo-video-wrapper {
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+}
+
+.addis-cargo-video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
 .addis-cargo-video {
   width: 100%;
   max-width: 600px;
   margin: 20px auto;
 }
 
-.addis-cargo-video video {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+@media (min-width: 768px) { /* adjust as needed */
+  .addis-cargo-video {
+    width: 52%; /* take up half the screen on larger screens */
+    max-width: none; /* override the max-width from above */
+  }
 }
+
+.addis-cargo-video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+}
+
+.addis-cargo-video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+
 
 @media (max-width: 768px) {
   .header-container {
