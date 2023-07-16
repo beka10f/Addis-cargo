@@ -9,7 +9,7 @@ function sendEmail(event) {
 
   // Compose email details
   var emailData = {
-    to: "beka10f@yahoo.com",
+    to: "addis.ship@gmail.com",
     from: email,
     subject: "New Message from Website Contact Form",
     body: "Name: " + name + "\nEmail: " + email + "\nMessage: " + message,
