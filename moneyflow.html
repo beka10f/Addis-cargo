@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MoneyFlow - Addis Cargo</title>
+
+  <link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+ 
+
+  
+<style>
+/* Reset some of the browser's default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: #f9f9f9;
+  line-height: 1.6;
+}
+
+header {
+  padding: 20px;
+}
+a {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+
+/* Main content */
+main {
+    padding: 10px 0;
+    margin: 0;
+    max-width: 100%;
+
+}
+
+section {
+  padding: 32px;
+  text-align: center;
+}
+
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 1em;
+}
+
+/* Banner Section */
+#service {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 70px 0;
+  background-color: #fff;
+  text-align: center;
+}
+
+#service h1 {
+  font-size: 2.5em;
+  margin-bottom: 1em;
+  color: #027bff;
+}
+
+#service p {
+  font-size: 1.2em;
+  max-width: 60ch;
+  margin-bottom: 2em;
+  color: #555;
+  padding: 5px;
+
+}
+/*how-to-section*/
+#how-it-works {
+  background-color: #f8f8f8; 
+  padding: 80px 0;
+  text-align: center;
+}
+
+#how-it-works h2 {
+  font-size: 2.2em;
+    color: #333;
+    font-weight: 300;
+    text-transform: uppercase;
+    margin: auto;
+    text-align: center;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2em;
+  padding: 0 10%;
+  margin-bottom: 3em;
+}
+
+.step {
+  background: #fff;
+  padding: 2em;
+  border-radius: 10px;
+  box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.step h3 {
+  color: #333;
+  font-weight: 500;
+  margin-bottom: 0.5em;
+  font-size: 1.5em;
+}
+
+.step p {
+  color: #666;
+  line-height: 1.5;
+}
+
+/* Form styles */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+form input, form textarea, form button {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+form button {
+  background-color: #007BFF;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+form button:hover {
+  background-color: #0056b3;
+}
+
+
+/* Benefits Section */
+#benefits {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 0; /* Increased padding for more white space */
+  background-color: #fff;
+  text-align: center;
+}
+
+#benefits h2 {
+  font-size: 2.2em;
+  color: #333;
+  font-weight: 300; /* Lighter font-weight for the 'Apple' look */
+  text-transform: uppercase;
+}
+
+#benefits .benefit-container {
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+  margin-top: 2em;
+}
+
+#benefits .benefit-box {
+  flex: 1;
+  text-align: center;
+  padding: 3em; /* More padding for more white space */
+  margin: 2em; /* More margin for more white space */
+  background-color: #f8f8f8; /* A very light grey, close to white */
+  border-radius: 12px;
+}
+
+#benefits .benefit-box h3 {
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+  color: #333;
+  font-weight: bold;
+}
+
+#benefits .benefit-box p {
+  font-size: 1em;
+  color: #666;
+  line-height: 1.5; /* A higher line-height for more white space and better readability */
+}
+
+/* Calculator styles */
+.calculator {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  padding: 3em;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  align-items: center;
+  justify-content: center;
+  max-width: 500px;
+  margin: 2em auto;
+}
+
+.calculator h2 {
+  font-size: 2em;
+  margin-bottom: 1em;
+  color: #333;
+  text-align: center;
+}
+
+.calculator input, .calculator button {
+  width: 100%;
+  padding: 1em;
+  border: 0;
+  border-radius: 4px;
+  margin-bottom: 1em;
+  font-size: 1em;
+  outline: none;
+}
+
+.calculator input {
+  background: #f5f7fa;
+}
+
+.calculator button {
+  background-color: #007BFF;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.calculator button:hover {
+  background-color: #0056b3;
+}
+
+.calculator #error-message {
+  color: red;
+  margin-bottom: 1em;
+}
+#contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 0;
+    background-color: #fbfbfb;
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: 2.2em;
+    color: #333;
+    font-weight: 300; 
+    text-transform: uppercase;
+    margin-bottom: 1em;
+}
+
+#contact p {
+    font-size: 1.2em;
+    max-width: 60ch;
+    margin-bottom: 2em;
+    color: #555;
+}
+
+#contact a {
+    color: #007BFF;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+#contact a:hover {
+    color: #0056b3;
+}
+
+@media screen and (max-width: 768px) {
+  /* Benefits Section */
+  #benefits .benefit-container {
+    flex-direction: column;
+  }
+
+  #benefits .benefit-box {
+    margin: 1em 0; /* Adjusted for vertical stacking */
+    width: 100%; /* Increased to fill more of the screen */
+  }
+}
+</style>
+</head>
+
+<body>
+
+  <header>
+    <div class="header-container">
+      <a href="index.html"> <!-- Add the correct link to your homepage here -->
+        <img src="addis-cargo-HD.png" alt="Addis Cargo Logo" class="logo" />
+      </a>     
+       <nav>
+        <ul>
+          <li><a href="shop&ship.html" target="_blank" rel="noopener"><button class="shop-ship-button">Shop & Ship</button></a></li>
+          <li><a href="moneyflow.html" target="_blank" rel="noopener"><button class="moneyflow-button">MoneyFlow</button></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<main>
+
+    <section id="service">
+        <h1>Solving the Dollar Shortage for Ethiopian Businesses</h1>
+        <p>We provide US dollars for your import needs, helping you keep your business running smoothly.</p>
+
+              <div class="calculator container">
+                <h2>Import Cost Calculator</h2>
+                <div id="error-message"></div>
+                <label for="price">Price in USD:</label>
+                <input type="number" id="price" name="price" min="0">
+                <button onclick="calculateTotal()"><i class="fas fa-calculator"></i>Calculate Total</button>
+                <div id="result"></div>
+              </div>
+            
+    
+        <a href="#contact" class="button">Contact Us Now to Start Your Transaction</a>
+      </section>
+
+      <section id="how-it-works">
+        <h2>How It Works</h2>
+        <div class="grid-container">
+          <div class="step">
+            <h3>Step 1: Contact Us</h3>
+            <p>Reach out to us with your dollar needs for importing goods.</p>
+          </div>
+        
+          <div class="step">
+            <h3>Step 2: Verification</h3>
+            <p>We verify your business and the transaction to ensure compliance.</p>
+          </div>
+        
+          <div class="step">
+            <h3>Step 3: Fee Calculation</h3>
+            <p>We calculate the 5% service fee based on the transaction amount.</p>
+          </div>
+        
+          <div class="step">
+            <h3>Step 4: Payment in Birr</h3>
+            <p>You pay us the dollar amount plus fee, converted into Birr.</p>
+          </div>
+      
+          <div class="step">
+            <h3>Step 5: Delivery of Dollars</h3>
+            <p>We provide you with the US dollars you need for your imports.</p>  
+          </div>
+          
+          <div class="step">
+            <h3>Step 6: Conversion of Birr to Dollars</h3>
+            <p>We convert the Birr back into dollars using remittances.</p>
+          </div>
+        </div>
+      </section>
+      
+
+    <section id="benefits">
+        <h2>Benefits</h2>
+        <div class="benefit-container">
+          <div class="benefit-box">
+            <h3>Overcome the Dollar Shortage</h3>
+            <p>With our service, the shortage won't hold your business back.</p>
+          </div>
+      
+          <div class="benefit-box">
+            <h3>Keep Your Business Running</h3>
+            <p>Import the goods you need to operate smoothly.</p>
+          </div>
+      
+          <div class="benefit-box">
+            <h3>Competitive 5% Service Fee</h3>
+            <p>Our flat fee is competitive and transparent.</p>
+          </div>
+        </div>
+      </section>
+
+
+      <div id="contact">
+        <h2>Contact Information</h2>
+        <p>For any inquiries or concerns, please reach out to us:</p>
+        <p>Email: <a href="mailto:addis.ship@gmail.com">addis.ship@gmail.com</a></p>
+        <p>Phone: <a href="tel:+12027631879">+1 202-763-1879</a></p>
+        <p>Instagram: <a href="https://www.instagram.com/addis.cargo/" target="_blank" rel="noopener">@addis.cargo</a></p>
+    </div>
+    
+    
+    
+    </main>
+  
+  <footer>
+
+  </main>
+  <footer>
+    <p>
+      &copy; 2023 Addis-Cargo. All rights reserved. | Designed by Beka Meshesha
+    </p>
+  </footer>
+<script>
+function calculateTotal() {
+  var price = document.getElementById("price").value;
+
+  if (isNaN(price) || price < 0) {
+    var errorMessage = document.getElementById("error-message");
+    errorMessage.textContent = "⚠️ Oops! Please enter a valid price.";
+    return;
+  }
+
+  var exchange_rate = 56; // Fixed value
+  var ratio = 106; // Fixed value
+  var transaction_fee_percent = 5; // Fixed value
+
+  var tax_etb = price * exchange_rate;
+  var cost_etb = price * ratio;
+  var total_before_fee = cost_etb + tax_etb;
+  var transaction_fee = total_before_fee * transaction_fee_percent / 100;
+  var grand_total = total_before_fee + transaction_fee;
+
+  var formatter = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'ETB',
+    minimumFractionDigits: 2
+  });
+
+  var result = document.getElementById("result");
+  result.innerHTML = "<strong>Your Order Summary 🧾</strong><br>";
+  result.innerHTML += "Price (Tax included 📈): " + formatter.format(tax_etb) + "<br>";
+  result.innerHTML += "Item Cost 🏷️: " + formatter.format(cost_etb) + "<br>";
+  result.innerHTML += "Transaction Fee 💸: " + formatter.format(transaction_fee) + "<br>";
+  result.innerHTML += "<strong>Grand Total 🎉: " + formatter.format(grand_total) + "</strong>";
+}
+
+    function validateForm() {
+      var name = document.getElementById("name").value;
+      var email = document.getElementById("email").value;
+      var message = document.getElementById("message").value;
+      
+      if(name === "" || email === "" || message === "") {
+        alert("Please fill out all required fields.");
+      } else {
+        alert("Form submitted successfully.");
+        // Here, you would actually send the form data to your server
+      }
+    }
+    </script>
+    
+    </body>
+    </html>
