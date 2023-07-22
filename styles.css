@@ -675,7 +675,6 @@ button.home-ship {
   /* Make navigation more suitable for mobile */
   nav ul {
     display: flex;
-    flex-direction: column;
     align-items: center;
     padding: 0;
   }
@@ -779,7 +778,7 @@ button.home-ship {
     align-items: center;
   }
 }
-.shop-ship-button {
+.shop-ship-button, .moneyflow-button {
   background-color: #007bff;
   color: #ffffff;
   border: none;
@@ -789,41 +788,37 @@ button.home-ship {
   cursor: pointer;
   transition: background-color 0.3s ease;
   text-decoration: none;
-}
-
-
-.shop-ship-button:hover {
-  background-color: #005ea3;
-}
-
-/* Apple-inspired button styles */
-.shop-ship-button {
   font-family: "San Francisco", "Helvetica Neue", Arial, sans-serif;
   font-weight: bold;
   text-transform: uppercase;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* Center the button text */
-.shop-ship-button {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+.shop-ship-button:hover, .moneyflow-button:hover {
+  background-color: #005ea3;
+}
+
 
 @media screen and (max-width: 600px) {
   /* Reduce padding and font size of the button */
-  .shop-ship-button {
+  .shop-ship-button, .moneyflow-button {
     padding: 8px 16px;
     font-size: 14px;
     
   }
+  nav{
+  margin: auto;
 
+  }
   /* Show only the "Shop and Ship" button and center it */
-  .header-container .shop-ship-button {
+  .header-container .shop-ship-button .moneyflow-button {
     display: block;
-    margin-right: 120px;  }
+    margin-right: 120px; 
+  
+  }
 
   /* Show the logo */
   header .header-container .logo {
@@ -831,8 +826,15 @@ button.home-ship {
     margin: 0;
   }
 
-  /* Hide specific list items */
-  header .header-container nav ul li:not(:first-child) {
-    display: none;
-  }
 }
+
+ 
+
+
+
+
+
+
+
+
+
