@@ -154,3 +154,14 @@ function calculatePrice() {
 }
 
 ///////
+
+
+document.getElementById('english-button').addEventListener('click', function() {
+  document.getElementById('product1-description').innerText = 'We simplify online shopping for you. Purchase products from international stores and get them delivered straight to Ethiopia.';
+  document.getElementById('product2-description').innerText = 'Our service provides you with the US dollars you need. You simply pay us in Birr, we give you the dollars for your imports. ';
+});
+
+document.getElementById('amharic-button').addEventListener('click', function() {
+  document.getElementById('product1-description').innerText = 'ከፈለጋችሁ አገር እቃ ገዝታችሁ ወደኢትዮጵያ ማስመጣት ትችላላችሁ።';
+  document.getElementById('product2-description').innerText = 'ለኢትዮጵያ ቢዝነሶች ከዉጪ ሀገር እቃ ማስገባት እናቀላለን።  ብሩ ኢትዮጵያ ሲሰጥ ከውጪ ሀገር በዶላር ዕቃው ገዛኸኝ። ';
+});
