@@ -924,3 +924,30 @@ button.home-ship {
       font-size: 1em;
   }
 }
+
+
+.language-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.language-buttons button {
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  background-color: #F5F5F5;  /* Light grey background */
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);  /* Subtle shadow for depth */
+  color: #000;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.language-buttons button:active, .language-buttons button:focus {
+  background-color: #E5E5E5;  /* Slightly darker grey when button is clicked */
+  outline: none;
+}
