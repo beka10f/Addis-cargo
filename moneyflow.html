@@ -70,9 +70,9 @@ section {
 
 #service p {
   font-size: 1.2em;
-  max-width: 60ch;
+  max-width: 70ch;
   margin-bottom: 2em;
-  color: #555;
+  color: #000;
   padding: 5px;
 
 }
@@ -94,8 +94,6 @@ section {
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2em;
   padding: 0 10%;
   margin-bottom: 3em;
 }
@@ -287,6 +285,7 @@ form button:hover {
     width: 100%; /* Increased to fill more of the screen */
   }
 }
+
 </style>
 </head>
 
@@ -305,94 +304,83 @@ form button:hover {
       </nav>
     </div>
   </header>
-
-<main>
-
+  <main>
     <section id="service">
-        <h1>Solving the Dollar Shortage for Ethiopian Businesses</h1>
-        <p>We provide US dollars for your import needs, helping you keep your business running smoothly.</p>
-
-              <div class="calculator container">
-                <h2>Import Cost Calculator</h2>
-                <div id="error-message"></div>
-                <label for="price">Price in USD:</label>
-                <input type="number" id="price" name="price" min="0">
-                <button onclick="calculateTotal()"><i class="fas fa-calculator"></i>Calculate Total</button>
-                <div id="result"></div>
-              </div>
-            
-    
-        <a href="#contact" class="button">Contact Us Now to Start Your Transaction</a>
-      </section>
-
-      <section id="how-it-works">
-        <h2>How It Works</h2>
-        <div class="grid-container">
-          <div class="step">
-            <h3>Step 1: Contact Us</h3>
-            <p>Reach out to us with your dollar needs for importing goods.</p>
-          </div>
-        
-          <div class="step">
-            <h3>Step 2: Verification</h3>
-            <p>We verify your business and the transaction to ensure compliance.</p>
-          </div>
-        
-          <div class="step">
-            <h3>Step 3: Fee Calculation</h3>
-            <p>We calculate the 5% service fee based on the transaction amount.</p>
-          </div>
-        
-          <div class="step">
-            <h3>Step 4: Payment in Birr</h3>
-            <p>You pay us the dollar amount plus fee, converted into Birr.</p>
-          </div>
-      
-          <div class="step">
-            <h3>Step 5: Delivery of Dollars</h3>
-            <p>We provide you with the US dollars you need for your imports.</p>  
-          </div>
-          
-          <div class="step">
-            <h3>Step 6: Conversion of Birr to Dollars</h3>
-            <p>We convert the Birr back into dollars using remittances.</p>
-          </div>
+     
+      <h1 class="service-title">Your Birr for Dollars: Simplifying Your Imports!</h1>
+      <p class="service-description"> Tell us how many dollars you need for your imports, and we'll tell you much Birr you need to pay</p>
+  
+      <div class="calculator container">
+          <h2 class="calculator-title">Total Dollars Needed</h2>
+          <div id="error-message"></div>
+          <label for="price">Price in USD:</label>
+          <input type="number" id="price" name="price" min="0">
+          <button onclick="calculateTotal()"><i class="fas fa-calculator"></i>Calculate Total</button>
+          <div id="result"></div>
+      </div>
+  
+      <a href="#contact" class="button service-contact">Contact Us Now to Start Your Transaction</a>
+    </section>
+  
+    <section id="how-it-works">
+      <h2 class="how-title">How It Works</h2>
+      <div class="grid-container">
+        <div class="step">
+          <h3 class="step-title1">Step 1: Contact Us</h3>
+          <p class="step-description1">Reach out to us to discuss your dollar needs for importing goods.</p>
         </div>
-      </section>
-      
-
+    
+        <div class="step">
+          <h3 class="step-title2">Step 2: Product Selection</h3>
+          <p class="step-description2">We arrange a meeting at your store, where you can carefully choose the items you want to order.</p>
+        </div>
+    
+        <div class="step">
+          <h3 class="step-title3">Step 3: Payment in Birr</h3>
+          <p class="step-description3">Once you've made your selections, we will collect the payment in Birr for the chosen products.</p>
+        </div>
+    
+        <div class="step">
+          <h3 class="step-title4">Step 4: Purchase and Shipment</h3>
+          <p class="step-description4">After receiving your payment, we will proceed to purchase the products on your behalf and arrange for their shipment to Ethiopia.</p>
+        </div>
+    
+        <div class="step">
+          <h3 class="step-title5">Step 5: Customs Clearance and Delivery</h3>
+          <p class="step-description5">When the shipment arrives in Ethiopia, we take care of the customs clearance and deliver the products directly to your store.</p>  
+        </div>
+      </div>
+    </section>
+    
+  
     <section id="benefits">
-        <h2>Benefits</h2>
-        <div class="benefit-container">
-          <div class="benefit-box">
-            <h3>Overcome the Dollar Shortage</h3>
-            <p>With our service, the shortage won't hold your business back.</p>
-          </div>
-      
-          <div class="benefit-box">
-            <h3>Keep Your Business Running</h3>
-            <p>Import the goods you need to operate smoothly.</p>
-          </div>
-      
-          <div class="benefit-box">
-            <h3>Competitive 5% Service Fee</h3>
-            <p>Our flat fee is competitive and transparent.</p>
-          </div>
+      <h2 class="benefits-title">Benefits</h2>
+      <div class="benefit-container">
+        <div class="benefit-box">
+          <h3 class="benefit-title1">Overcome the Dollar Shortage</h3>
+          <p class="benefit-description1">With our service, the shortage won't hold your business back.</p>
         </div>
-      </section>
-
-
-      <div id="contact">
-        <h2>Contact Information</h2>
-        <p>For any inquiries or concerns, please reach out to us:</p>
-        <p>Email: <a href="mailto:addis.ship@gmail.com">addis.ship@gmail.com</a></p>
-        <p>Phone: <a href="tel:+12027631879">+1 202-763-1879</a></p>
-        <p>Instagram: <a href="https://www.instagram.com/addis.cargo/" target="_blank" rel="noopener">@addis.cargo</a></p>
+    
+        <div class="benefit-box">
+          <h3 class="benefit-title2">Keep Your Business Running</h3>
+          <p class="benefit-description2">Import the goods you need to operate smoothly.</p>
+        </div>
+    
+        <div class="benefit-box">
+          <h3 class="benefit-title3">Competitive 5% Service Fee</h3>
+          <p class="benefit-description3">Our flat fee is competitive and transparent.</p>
+        </div>
+      </div>
+    </section>
+  
+    <div id="contact">
+      <h2 class="contact-title">Contact Information</h2>
+      <p class="contact-description">For any inquiries or concerns, please reach out to us:</p>
+      <p>Email: <a href="mailto:addis.ship@gmail.com" class="contact-email">addis.ship@gmail.com</a></p>
+      <p>Phone: <a href="tel:+12027631879" class="contact-phone">+1 202-763-1879</a></p>
+      <p>Instagram: <a href="https://www.instagram.com/addis.cargo/" target="_blank" rel="noopener" class="contact-instagram">@addis.cargo</a></p>
     </div>
-    
-    
-    
-    </main>
+  </main>
   
   <footer>
 
@@ -430,24 +418,13 @@ function calculateTotal() {
 
   var result = document.getElementById("result");
   result.innerHTML = "<strong>Your Order Summary 🧾</strong><br>";
-  result.innerHTML += "Price (Tax included 📈): " + formatter.format(tax_etb) + "<br>";
+  result.innerHTML += "Tax(customs) 📈: " + formatter.format(tax_etb) + "<br>";
   result.innerHTML += "Item Cost 🏷️: " + formatter.format(cost_etb) + "<br>";
   result.innerHTML += "Transaction Fee 💸: " + formatter.format(transaction_fee) + "<br>";
-  result.innerHTML += "<strong>Grand Total 🎉: " + formatter.format(grand_total) + "</strong>";
+  result.innerHTML += "<strong>Total Birr needed 🎉: " + formatter.format(grand_total) + "</strong>";
 }
 
-    function validateForm() {
-      var name = document.getElementById("name").value;
-      var email = document.getElementById("email").value;
-      var message = document.getElementById("message").value;
-      
-      if(name === "" || email === "" || message === "") {
-        alert("Please fill out all required fields.");
-      } else {
-        alert("Form submitted successfully.");
-        // Here, you would actually send the form data to your server
-      }
-    }
+
     </script>
     
     </body>
