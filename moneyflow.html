@@ -400,28 +400,32 @@ function calculateTotal() {
     return;
   }
 
-  var exchange_rate = 56; // Fixed value
-  var ratio = 106; // Fixed value
-  var transaction_fee_percent = 5; // Fixed value
+var official_exchange_rate = 56; // Official exchange rate
+var currency_stabilization = 50; // Added for currency stabilization
+var ratio = 106; // Fixed value
+var transaction_fee_percent = 10; // Transaction fee in percentage
 
-  var tax_etb = price * exchange_rate;
-  var cost_etb = price * ratio;
-  var total_before_fee = cost_etb + tax_etb;
-  var transaction_fee = total_before_fee * transaction_fee_percent / 100;
-  var grand_total = total_before_fee + transaction_fee;
+var exchange_rate = official_exchange_rate + currency_stabilization; // Exchange rate after considering currency stabilization
 
-  var formatter = new Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency: 'ETB',
-    minimumFractionDigits: 2
-  });
+var tax_etb = price * official_exchange_rate;
+var cost_etb = price * ratio;
+var total_before_fee = cost_etb + tax_etb;
+var transaction_fee = total_before_fee * transaction_fee_percent / 100;
+var grand_total = total_before_fee + transaction_fee;
 
-  var result = document.getElementById("result");
-  result.innerHTML = "<strong>Your Order Summary 🧾</strong><br>";
-  result.innerHTML += "Tax(customs) 📈: " + formatter.format(tax_etb) + "<br>";
-  result.innerHTML += "Item Cost 🏷️: " + formatter.format(cost_etb) + "<br>";
-  result.innerHTML += "Transaction Fee 💸: " + formatter.format(transaction_fee) + "<br>";
-  result.innerHTML += "<strong>Total Birr needed 🎉: " + formatter.format(grand_total) + "</strong>";
+var formatter = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'ETB',
+  minimumFractionDigits: 2
+});
+
+result.innerHTML = "<strong>Your Order Summary 🧾</strong><br>";
+result.innerHTML += "Exchange Rate: " + exchange_rate + " (Official: " + official_exchange_rate + " + Stabilization: " + currency_stabilization + ")<br>";
+result.innerHTML += "Tax(customs) 📈: " + formatter.format(tax_etb) + "<br>";
+result.innerHTML += "Item Cost 🏷️: " + formatter.format(cost_etb) + "<br>";
+result.innerHTML += "Transaction Fee 💸: " + formatter.format(transaction_fee) + "<br>";
+result.innerHTML += "<strong>Total Birr needed 🎉: " + formatter.format(grand_total) + "</strong>";
+
 }
 
 
