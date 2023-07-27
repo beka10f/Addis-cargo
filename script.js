@@ -163,5 +163,5 @@ document.getElementById('english-button').addEventListener('click', function() {
 
 document.getElementById('amharic-button').addEventListener('click', function() {
   document.getElementById('product1-description').innerText = 'ከፈለጋችሁ አገር እቃ ገዝታችሁ ወደኢትዮጵያ ማስመጣት ትችላላችሁ።';
-  document.getElementById('product2-description').innerText = 'ለኢትዮጵያ ቢዝነሶች ከዉጪ ሀገር እቃ ማስገባት እናቀላለን።  ብሩ ኢትዮጵያ ሲሰጥ ከውጪ ሀገር በዶላር ዕቃው ገዛኸኝ። ';
+  document.getElementById('product2-description').innerText = 'ለኢትዮጵያ ቢዝነሶች ከዉጪ ሀገር እቃ ማስገባት እናቀላለን። ብሩ ኢትዮጵያ ሲሰጥ ከውጪ ሀገር በዶላር ዕቃው እንገዛለን።';
 });
