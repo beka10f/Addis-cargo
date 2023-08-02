@@ -286,6 +286,33 @@ form button:hover {
   }
 }
 
+.language-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+.language-buttons button {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    background-color: #F5F5F5;  /* Light grey background */
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);  /* Subtle shadow for depth */
+    color: #000000;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.language-buttons button:active, .language-buttons button:focus {
+    background-color: #E5E5E5;  /* Slightly darker grey when button is clicked */
+    outline: none;
+}
+
+
 </style>
 </head>
 
@@ -305,8 +332,15 @@ form button:hover {
     </div>
   </header>
   <main>
+
+   
     <section id="service">
      
+      <div class="language-buttons">
+        <button class="english">English</button>
+        <button class="amharic">Amharic</button>
+   </div>
+
       <h1 class="service-title">Your Birr for Dollars: Simplifying Your Imports!</h1>
       <p class="service-description"> Tell us how many dollars you need for your imports, and we'll tell you much Birr you need to pay</p>
   
@@ -419,9 +453,10 @@ var formatter = new Intl.NumberFormat('en-US', {
   minimumFractionDigits: 2
 });
 
+
 result.innerHTML = "<strong>Your Order Summary 🧾</strong><br>";
 result.innerHTML += "Exchange Rate: " + exchange_rate + " (Official: " + official_exchange_rate + " + Stabilization: " + currency_stabilization + ")<br>";
-result.innerHTML += "Tax(customs) 📈: " + formatter.format(tax_etb) + "<br>";
+result.innerHTML += "Tax(ቀረጥ) 📈: " + formatter.format(tax_etb) + "<br>";
 result.innerHTML += "Item Cost 🏷️: " + formatter.format(cost_etb) + "<br>";
 result.innerHTML += "Transaction Fee 💸: " + formatter.format(transaction_fee) + "<br>";
 result.innerHTML += "<strong>Total Birr needed 🎉: " + formatter.format(grand_total) + "</strong>";
@@ -429,7 +464,68 @@ result.innerHTML += "<strong>Total Birr needed 🎉: " + formatter.format(grand_
 }
 
 
+document.querySelector('.amharic').addEventListener('click', function() {
+  let translation = {
+    "service-title": "ዶላርህን ወደ ብር ቀይር: ወደ ኢትዮጵያ እቃዎች ማስመጣት ቀላል እናደርጋለን",
+    "service-description": "የሚፈልጉትን እቃ ይንገሩን እኛ ገዝተን ወደ ኢትዮጵያ እንልካለን።",
+    "calculator-title": "ምን ያህል ዶላር ያስፈልግዎታል.",
+    "contact": "ለመጀመር አሁን ያነጋግሩን።",
+   
+    "how-title": "እንዴት ይሰራል",
+    "step-title1": "Step 1: ያወያዩን",
+    "step-description1": "እቃዎትን ለማስመጣት የሚፈልጉት የዶላር መጠን ለመወያየት ያነጋግሩን።",
+    "step-title2": "Step 2: እቃ መምረጥ",
+    "step-description2": "በሱቅዎ ውስጥ እኛ ባለንበት ወይም በግልዎ የሚፈልጉትን እቃ በጥንቃቄ መምረጥ ይችላሉ።",
+    "step-title3": "Step 3: ክፍያ",
+    "step-description3": "ምርጫዎን ከጨረሱ በኃላ ለተመረጡት ምርቶች ክፍያውን በብር እንሰበስባለን።",
+    "step-title4": "Step 4: ግብይት መፈፀም እና ጭነት",
+    "step-description4": "ክፍያዎትን ከተቀበልን በኃላ ምርቶቹን በእርስዎ ስም ገዝተን ወዷ ኢትዮጵያ እንዲላክ እናደርጋለን።",
+    "step-title5": "Step 5: የጉምሩክ ሂቧት እና አቅርቦት ጭነቱ",
+    "step-description5": "ኢትዮጵያ ሲቧርስ የጉምሩክ ክፍያውን እራሳችን ጨርሰን ምርቶቹ በቀጥታ እርስዎ ጋር እንዲጿርስ እናደርጋለን።",
+
+  
+    };
+
+    for(let key in translation) {
+    let elements = document.getElementsByClassName(key);
+    for(let i = 0; i < elements.length; i++) {
+      elements[i].textContent = translation[key];
+    }
+  }
+});
+
+
+
+
+document.querySelector('.english').addEventListener('click', function() {
+    let translation = {
+        "service-title": "Your Birr for Dollars: Simplifying Your Imports!",
+        "service-description": "Tell us how many dollars you need for your imports, and we'll tell you much Birr you need to pay",
+        "calculator-title": "Enter Dollars Needed",
+        "contact": "Contact Us Now to Start Your Transaction",
+        "how-title": "How It Works",
+        "step-title1": "Step 1: Contact Us",
+        "step-description1": "Reach out to us to discuss your dollar needs for importing goods.",
+        "step-title2": "Step 2: Product Selection",
+        "step-description2": "We arrange a meeting at your store, where you can carefully choose the items you want to order.",
+        "step-title3": "Step 3: Payment in Birr",
+        "step-description3": "Once you've made your selections, we will collect the payment in Birr for the chosen products.",
+        "step-title4": "Step 4: Purchase and Shipment",
+        "step-description4": "After receiving your payment, we will proceed to purchase the products on your behalf and arrange for their shipment to Ethiopia.",
+        "step-title5": "Step 5: Customs Clearance and Delivery",
+        "step-description5": "When the shipment arrives in Ethiopia, we take care of the customs clearance and deliver the products directly to your store.",
+    }
+    Object.keys(translation).forEach(function(key) {
+        let element = document.querySelector(`.${key}`);
+        if(element){
+            element.textContent = translation[key];
+        }
+    });
+});
+
     </script>
     
     </body>
     </html>
+
+    
