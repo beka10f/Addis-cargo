@@ -13,8 +13,9 @@
         <img src="addis-cargo-HD.png" alt="Addis Cargo Logo" class="logo" />
       </a>      <nav>
         <ul>
-          <li><a href="shop&ship.html" target="_blank" rel="noopener"><button class="shop-ship-button">Shop & Ship</button></a></li>
           <li><a href="moneyflow.html" target="_blank" rel="noopener"><button class="moneyflow-button">MoneyFlow</button></a></li>
+          <li><a href="shop&ship.html" target="_blank" rel="noopener"><button class="shop-ship-button">Shop & Ship</button></a></li>
+
         </ul>
       </nav>
     </div>
@@ -29,294 +30,25 @@
         <section id="products-section">
             <div class="product-container">
 
-              <div class="product-card">
-                <h2 class="product-title">Shop & Ship</h2>
-                <p id="product1-description" class="product-description">We simplify online shopping for you. Purchase products from international stores and get them delivered straight to Ethiopia.</p>
-                <a href="shop&ship.html" class="product-link">Learn More</a>
-            </div>
+             
             
             <div class="product-card">
-                <h2 class="product-title">MoneyFlow</h2>
+                <h2 class="product-title">MoneyFlow for Business</h2>
                 <p id="product2-description" class="product-description">Our service provides you with the US dollars you need. You simply pay us in Birr, we give you the dollars for your imports. </p>
                 <a href="moneyflow.html" class="product-link">Learn More</a>
             </div>
 
+            <div class="product-card">
+              <h2 class="product-title">Shop & Ship for Individual</h2>
+              <p id="product1-description" class="product-description">We simplify online shopping for you. Purchase products from international stores and get them delivered straight to Ethiopia.</p>
+              <a href="shop&ship.html" class="product-link">Learn More</a>
+          </div>
             </div>
         </section>
     </div>
 </section>
 
 
-    <section id="shipment-request">
-      <div class="home-container">
-        <section class="info-section">
-          <div class="info-container">
-            <h3><span class="highlight"> Send Anything, Anytime </span> - your TV, phone, clothes, shoes, whatever you need.</h3>
-            <p>Addis-Cargo: Your shipping partner for the Ethiopian diaspora, bringing affordable rates, reliable delivery, and a sprinkle of convenience to your doorstep!</p>
-          </div>
-          <a href="tel:+12027631879">
-            <button id="home-ship">Call now to ship</button>
-          </a>
-        </section>
-    
-        <section class="calculator-section">
-          <div class="form-container">
-            <h2>Shipping Calculator</h2>
-        
-            <div class="input-container">
-              <label for="weight">Weight:</label>
-              <div class="input-group">
-                <input type="number" id="weight" placeholder="Enter weight">
-                <select id="unit">
-                  <option value="kg">Kg</option>
-                  <option value="lb">Lb</option>
-                </select>
-              </div>
-            </div>
-            </div>
-            <div class="input-container">
-              <label for="pickup-location">Pickup Location</label>
-              <select id="pickup-location" name="pickup-location">
-                <option value="Washington DC">Washington DC</option>
-                <option value="Maryland">Maryland</option>
-                <option value="Virginia">Virginia</option>
-              </select>
-              
-            </div>
-            
-           
-            
-              <div class="input-container">
-                <label for="shipping-speed">Shipping Speed:</label>
-                <select id="shipping-speed">
-                  <option value="Standard Shipping (7 - 12 days) - Free">Standard Shipping (7 - 12 days) - Free</option>
-                  <option value="Express Shipping (5 - 7 days) - $10">Express Shipping (5 - 7 days) - $10</option>
-                  <option value="Expedited Shipping (2 - 5 days) - $20">Expedited Shipping (2 - 5 days) - $20</option>
-                  
-                </select>
-              </div>
-              <button id="calculate-price-btn" onclick="calculatePrice()">Calculate Price</button>
-
-            </div>
-          </div>
-    
-        </section>
-    
-      
-      
-    
-      
-      <div id="ship-now-modal" class="modal" style="display: none;">
-        <div class="modal-content">
-          <span class="close-button" onclick="closeShipNowModal()">&times;</span>
-          <h3>Ship Now</h3>
-          <div class="input-container">
-            <label for="name">Name:</label>
-            <input type="text" id="name" placeholder="Enter your name" />
-          </div>
-          <div class="input-container">
-            <label for="phone">Phone:</label>
-            <input type="text" id="phone" placeholder="Enter your phone number" />
-          </div>
-          <div class="input-container">
-            <label for="contact-options">Preferred Contact Method:</label>
-            <select id="contact-options">
-              <option value="call">Call</option>
-              <option value="text">Text</option>
-              <option value="email">Email</option>
-            </select>
-          </div>
-          <button id="submit-ship-now" onclick="submitShipNow()">Submit</button>
-        </div>
-      </div>
-      
-          
-          <div id="contact-modal" class="modal" style="display: none;">
-            <div class="modal-content">
-              <span class="close-button" onclick="closeContactModal()">&times;</span>
-              <h3>Contact Options</h3>
-              <p>Please choose your preferred method of contact:</p>
-              <button onclick="openCallModal()">Call</button>
-              <button onclick="openTextModal()">Text</button>
-              <button onclick="openEmailModal()">Email</button>
-            </div>
-          </div>
-          
-          <section id="pricing">
-            <div class="pricing-table">
-              <h2>Pricing</h2>
-              <div id="unit-clicker">
-                <button id="kg-button" class="active" onclick="toggleUnit('kg')">
-                  Kg
-                </button>
-                <button id="lb-button" onclick="toggleUnit('lb')">Lb</button>
-              </div>
-              <table>
-                <tr>
-                  <th>Weight Range</th>
-                  <th>Price per Unit</th>
-                </tr>
-                <tr>
-                  <td>
-                    <span class="weight-range-kg">Below 3 Kg</span>
-                    <span class="weight-range-lb" style="display: none"
-                      >Below 6 lb</span
-                    >
-                  </td>
-                  <td>
-                    <span class="price-kg">$50</span>
-                    <span class="price-lb" style="display: none">$50</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <span class="weight-range-kg">3-10 Kg</span>
-                    <span class="weight-range-lb" style="display: none"
-                      >6-22 lb</span
-                    >
-                  </td>
-                  <td>
-                    <span class="price-kg">$18.00</span>
-                    <span class="price-lb" style="display: none">$8.16</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <span class="weight-range-kg">11-50 Kg</span>
-                    <span class="weight-range-lb" style="display: none"
-                      >23-110 lb</span
-                    >
-                  </td>
-                  <td>
-                    <span class="price-kg">$14.00</span>
-                    <span class="price-lb" style="display: none">$6.35</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <span class="weight-range-kg">51-100 Kg</span>
-                    <span class="weight-range-lb" style="display: none"
-                      >111-220 lb</span
-                    >
-                  </td>
-                  <td>
-                    <span class="price-kg">$13.00</span>
-                    <span class="price-lb" style="display: none">$5.90</span>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <span class="weight-range-kg">101-300 Kg</span>
-                    <span class="weight-range-lb" style="display: none"
-                      >221-660 lb</span
-                    >
-                  </td>
-                  <td>
-                    <span class="price-kg">$12.00</span>
-                    <span class="price-lb" style="display: none">$5.45</span>
-                  </td>
-                </tr>
-              </table>
-              <div id="weight-info">
-                Please note, items under <span>6 pounds or 3 kg</span> do not incur a per unit charge.
-              </div>
-            </div>
-          </section>
-          
-      </section>
-      <section id="how-it-works">
-        <h2>How It Works</h2>
-        <div class="steps-container">
-            <div class="step">
-                <i class="fas fa-phone"></i>
-                <h3>Step 1</h3>
-                <p>Contact us to schedule a pickup for your shipment.</p>
-            </div>
-            <div class="step">
-                <i class="fas fa-truck"></i>
-                <h3>Step 2</h3>
-                <p>Our team will come to your desired location and collect the items.</p>
-            </div>
-            <div class="step">
-                <i class="fas fa-plane"></i>
-                <h3>Step 3</h3>
-                <p>We will transport your shipment to our drop-off locations in Addis Ababa.</p>
-            </div>
-            <div class="step">
-                <i class="fas fa-warehouse"></i>
-                <h3>Step 4</h3>
-                <p>Our dedicated colleagues will receive and securely store your items.</p>
-            </div>
-            <div class="step">
-                <i class="fas fa-truck"></i>
-                <h3>Step 5</h3>
-                <p>Choose to pick up your shipment or arrange delivery to your address.</p>
-            </div>
-        </div>
-        <p class="footer-text">
-            For more information or to schedule a shipment, <a href="#contact">contact us</a> and we'll assist you every step of the way.
-        </p>
-    </section>
-    
-      
-      <section id="contact">
-        <h2>Contact Information</h2>
-        <p>For any inquiries or concerns, please reach out to us:</p>
-        <div class="contact-details">
-          <p>
-            <strong>Email:</strong>
-            <a href="mailto:beka10f@yahoo.com">addis.ship@gmail.com</a>
-          </p>
-          <p>
-            <strong>Phone:</strong>
-            <a href="tel:+12027631879">+1 202-763-1879</a>
-          </p>
-        </div>
-
-        <form action="#" method="post" onsubmit="sendEmail(event)">
-          <label for="name">Your Name:</label>
-          <input type="text" id="name" name="name" required />
-          <label for="email">Your Email:</label>
-          <input type="email" id="email" name="email" required />
-          <label for="message">Message:</label>
-          <textarea id="message" name="message" required></textarea>
-          <button type="submit">Send Message</button>
-        </form>
-      </section>
-
-      <section id="about">
-        <h2>About Us</h2>
-        <p>
-          Addis-Cargo is a logistics startup dedicated to serving the Ethiopian
-          diaspora. We understand the importance of affordable shipping,
-          reliable delivery, and convenience for our customers. With our
-          expertise in the logistics industry, we aim to provide exceptional
-          service and bridge the gap for the Ethiopian community.
-        </p>
-        <p>
-          Our team is committed to ensuring your shipments are handled securely
-          and delivered on time. We take pride in being a trusted partner for
-          your shipping needs.
-        </p>
-      </section>
-
-      <section id="testimonials">
-        <h2>Testimonials</h2>
-        <div class="testimonial">
-          <h3>Sami Tesfaye</h3>
-          <p>
-            "Addis-Cargo provided excellent service for shipping my packages. I
-            received them on time and in perfect condition. Highly recommended!"
-          </p>
-        </div>
-        <div class="testimonial">
-          <h3>Meskerem Tadesse</h3>
-          <p>
-            ""ለቤተሰቦቼ Addis-cargo እንድልክ አስችሎኛል፣ መጥተው ፓኬጁን አንስተው በሰዓቱ አደረሱት።"
-          </p>
-        </div>
-      </section>
-    </div>
 
     <footer>
       <p>
